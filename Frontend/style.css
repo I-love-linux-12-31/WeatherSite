@@ -1,0 +1,36 @@
+.navbar {
+/*  padding: 20px;
+  margin-bottom: 20px;
+  background: #6F06CC;
+  color: white;
+  flex: 1;*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #24252A;
+    padding: 8px;
+
+}
+
+.nav-item {
+    text-decoration: none;
+    align-items: center;
+    color: #edf0f1;
+}
+
+.nav_items {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav_items li {
+    display: inline-block;
+}
+
+
+/*
+.navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+}*/
