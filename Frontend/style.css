@@ -48,6 +48,21 @@ body {
     background-color: #43444d;
 }
 
+.footer-card {
+    background-color: rgba(99, 152, 143, 0.6);
+    border-radius: 15px;
+    padding: 8px;
+    text-decoration: none;
+    box-shadow: 1px 1px 5px 3px rgba(128, 128, 128, 0.4);
+}
+
+.footer-link {
+    text-decoration: none;
+    color: azure;
+    padding: none;
+    font-size: 22px;
+    font-family: "Open Sans", sans-serif;
+}
 
 /*
 .navbar-nav {

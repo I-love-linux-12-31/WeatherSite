@@ -29,5 +29,10 @@ def style():
     return flask.send_file("./Frontend/style.css")
 
 
+@app.route("/3rdParty/logo_white_cropped.png")
+def open_weather_logo_demo():
+    return flask.send_file("./Frontend/3rdParty/logo_white_cropped.png")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")
