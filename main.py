@@ -4,7 +4,6 @@ import datetime
 from flask import Flask
 import flask
 
-
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = secrets.token_hex()
@@ -27,6 +26,12 @@ def icon():
 @app.route("/style.css")
 def style():
     return flask.send_file("./Frontend/style.css")
+
+
+@app.route("/_tasks.css")
+def tasks():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./_tasks.css")
 
 
 @app.route("/3rdParty/logo_white_cropped.png")

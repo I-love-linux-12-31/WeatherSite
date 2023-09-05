@@ -1,0 +1,13 @@
+/* Not include to final site !!!*/
+.task1 {
+    color: azure;
+    font-family: "Open Sans", sans-serif;
+}
+
+.tasks-biglink {
+/*    text-decoration: none;*/
+    color: lightblue;
+    padding: none;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+}
