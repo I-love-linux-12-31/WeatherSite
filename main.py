@@ -23,6 +23,11 @@ def icon():
     return flask.send_file("./Frontend/favicon.svg")
 
 
+@app.route("/test.jpg")
+def test_img():
+    return flask.send_file("./Frontend/test.jpg")
+
+
 @app.route("/style.css")
 def style():
     return flask.send_file("./Frontend/style.css")

@@ -33,7 +33,7 @@
 <h1 id="TitleS">Title 1</h1>
 <h6>Title 6</h6>
 <h3>Title 3</h3>
-<a class="tasks-biglink" href="#TitleE">Go to Title 6</a>
+<a class="tasks-biglink" href="#TitleE">Go to Title 2</a>
 
 <p>Some text:
     ***
@@ -57,7 +57,61 @@
 ***
 </blockquote> <!-- Расширенная цитата  -->
 
-<div style="margin: 175px; border: 5px dashed red">** EMPTY SPACE **</div>
+<div style="margin: 75px; border: 5px dashed red">
+    <map name="map123">
+        <area shape="circle" coords="432,80,58" alt="Err" href="/Circle">
+        <area shape="rect" coords="282,324,487,497" alt="Err" href="/Rect">
+        <area shape="poly" coords="25,32,200,32,230,206,25,448" alt="Err" href="/Poly">
+
+    </map>
+    <img usemap="#map123" src="test.jpg" alt="Err">
+    
+
+
+</div>
+
+    <ol type="1" start="-3">
+        <li>-3</li>
+        <li>-2</li>
+        <li>-1</li>
+        <li>0</li>
+    </ol>
+    <ol type="I">
+        <li>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+        </li>
+        <li>
+            <ul type="disc">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+        </li>
+        <li>
+            <ul type="square">
+                <li>A - 1</li>
+                <li>C - 2</li>
+            </ul>
+        </li>
+    </ol>
+
+    <dl>
+        <dt>Термин 1</dt>
+        <dd>Опимание 1</dd>
+        <dt>Термин 2</dt>
+        <dd>Опимание 2</dd>
+        <dt>Термин 3</dt>
+        <dd>Опимание 3</dd>
+        <dt>Термин 4</dt>
+        <dd>Опимание 4</dd>
+        <dt>Термин 5</dt>
+        <dd>Опимание 5</dd>
+    </dl>
+
 
 <!-- Заголовки (конец) -->
 <h4>Title 4</h4>
@@ -68,7 +122,9 @@
 
 <div class="footer-card">
     <a class="tasks-biglink" href="https://github.com/I-love-linux-12-31"
-       target="_blank" title="My github profile.">My github</a> <!-- Внешняя ссылка -->
+       target="_blank" title="My github profile." rel="external">
+        <img src="test.jpg" height="64" width="64" alt="Test img.">
+        My github</a> <!-- Внешняя ссылка -->
 </div>
 
 
