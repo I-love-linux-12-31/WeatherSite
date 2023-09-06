@@ -44,5 +44,20 @@ def open_weather_logo_demo():
     return flask.send_file("./Frontend/3rdParty/logo_white_cropped.png")
 
 
+@app.route("/3rdParty/FreeIcons/weather-none-available.svg")
+def weather_not_av():
+    return flask.send_file("./Frontend/3rdParty/FreeIcons/weather-none-available.svg")
+
+
+@app.route("/weather-cards.css")
+def weather_cards_css():
+    return flask.send_file("./Frontend/weather-cards.css")
+
+
+@app.route("/weather-cards.html")
+def weather_cards_html():
+    return flask.send_file("./Frontend/__weather_card.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")

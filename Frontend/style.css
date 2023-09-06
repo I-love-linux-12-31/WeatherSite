@@ -61,7 +61,7 @@ body {
 .footer-link {
     text-decoration: none;
     color: azure;
-    padding: none;
+    padding: 0px;
     font-size: 22px;
     font-family: "Open Sans", sans-serif;
 }
@@ -79,7 +79,7 @@ footer {
 
 /*    display: flex-end;*/
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     box-sizing: border-box;
 
 
@@ -101,7 +101,7 @@ footer {
 
     text-decoration: none;
     color: azure;
-    padding: none;
+    padding: 0px;
     font-size: 18px;
     font-family: "Open Sans", sans-serif;
 
@@ -113,5 +113,19 @@ footer {
 }
 
 #footer {
+
+}
+
+.navbar-right {
+    /*display: inline-block;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+    background-color: #25293d;
+    padding: 8px;
+
+    border-radius: 20px;
+
 
 }
