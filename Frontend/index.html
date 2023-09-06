@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Weather forecast</title>
     <link rel="icon" href="favicon.svg"> <!-- Фавиконка -->
-    <link rel="stylesheet" href="style.css"> <!-- -->
-    <link rel="stylesheet" href="weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="css/style.css"> <!-- -->
+    <link rel="stylesheet" href="css/weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="css/navbar-styles.css"> <!-- -->
+    <link rel="stylesheet" href="css/language-switch.css"> <!-- -->
     <link rel="stylesheet" href="_tasks.css"> <!-- -->
 </head>
 <body>
@@ -24,19 +26,21 @@
                 <a class="nav-link" href="/monthly/">monthly</a>
             </li>
         </ul>
-        <!--<div style="display: inline-flex">
-            <div class="navbar-right">
-                &lt;!&ndash;<ul class="nav_items">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">To home page</a>
-                    </li>
-                </ul>&ndash;&gt;
-                <p style="margin-left: auto; display: inline-block;">123</p>
-                <p style="margin-left: auto; display: inline-block;">123</p>
-                <p style="">123</p>
-            </div>
-        </div>-->
     </nav>
+        <div class="navbar-right">
+            <p class="nav-item-r">
+                <a class="nav-link active" aria-current="page" href="/">ABCDE 123</a>
+            </p>
+
+            <label class="language-switch">
+                <input type="checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🇺🇸</p>
+                <p class="language-switch-on">🇷🇺</p>
+            </label>
+
+        </div>
+
 </div>
 
 <div class="weather-card-big">
@@ -47,98 +51,19 @@
 
 <!--############################################################################################################-->
 <!--############################################################################################################-->
-<div class="task1"> <!-- Основной блок задания 1-->
+<br>
+<div class="nav-item">
+    <div class="navbar-right">
+        <ul class="nav_items">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">To home page</a>
+            </li>
+        </ul>
 
-<!-- Заголовки (начало) -->
-<h1 id="TitleS">Title 1</h1>
-<h6>Title 6</h6>
-<h3>Title 3</h3>
-<a class="tasks-biglink" href="#TitleE">Go to Title 2</a>
-
-<p>Some text:
-    ***
-        ---
-</p>
+    </div>
+</div>
 
 <br>
-<pre> <!-- Форматированный текст -->
-<b>F 123</b> <!-- Жирный -->
- <strong>O 123</strong>
-  <i>R 123</i> <!-- Курсив -->
-   <em>M 123</em>
-    <u>A 123</u> <!-- Подчёркнутый -->
-     <sub>T 123</sub>
-      <sup>E 123</sup>
-       <cite>D TEXT !
-       *******</cite> <!-- Цитата  -->
-    <abbr>ABC</abbr> <!-- Аббревиатура -->
-</pre>
-<blockquote>123 456
-***
-</blockquote> <!-- Расширенная цитата  -->
-
-<div style="margin: 75px; border: 5px dashed red">
-    <map name="map123">
-        <area shape="circle" coords="432,80,58" alt="Err" href="/Circle">
-        <area shape="rect" coords="282,324,487,497" alt="Err" href="/Rect">
-        <area shape="poly" coords="25,32,200,32,230,206,25,448" alt="Err" href="/Poly">
-
-    </map>
-    <img usemap="#map123" src="test.jpg" alt="Err">
-    
-
-
-</div>
-
-    <ol type="1" start="-3">
-        <li>-3</li>
-        <li>-2</li>
-        <li>-1</li>
-        <li>0</li>
-    </ol>
-    <ol type="I">
-        <li>
-            <ul>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-            </ul>
-        </li>
-        <li>
-            <ul type="disc">
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-            </ul>
-        </li>
-        <li>
-            <ul type="square">
-                <li>A - 1</li>
-                <li>C - 2</li>
-            </ul>
-        </li>
-    </ol>
-
-    <dl>
-        <dt>Термин 1</dt>
-        <dd>Опимание 1</dd>
-        <dt>Термин 2</dt>
-        <dd>Опимание 2</dd>
-        <dt>Термин 3</dt>
-        <dd>Опимание 3</dd>
-        <dt>Термин 4</dt>
-        <dd>Опимание 4</dd>
-        <dt>Термин 5</dt>
-        <dd>Опимание 5</dd>
-    </dl>
-
-
-<!-- Заголовки (конец) -->
-<h4>Title 4</h4>
-<h5>Title 5</h5>
-<h2 id="TitleE">Title 2</h2>
-<a class="tasks-biglink" href="#TitleS">Go to Title 1</a>
-</div>
 
 <div class="footer-card">
     <a class="tasks-biglink" href="https://github.com/I-love-linux-12-31"
@@ -154,6 +79,11 @@
 <br>
 
 <footer id="footer"> <!-- Подвал страницы -->
+
+
+
+    <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png" class="">
+
     <div class="footer-card">
         <!-- openweather original logo https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png -->
         <a class="footer-link" href="/404">On <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png"> data.</a>
@@ -164,6 +94,7 @@ Administrator contacts:
 Email: <a class="footer-contacts" href="mailto:yaroslav.12.31.dev@gmail.com">yaroslav.12.31.dev@gmail.com</a>
 Phone: <a class="footer-contacts" href="tel:+70000000">+70000000</a></pre>
     </div>
+
 
 
 </footer>
