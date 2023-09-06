@@ -28,9 +28,9 @@ def test_img():
     return flask.send_file("./Frontend/test.jpg")
 
 
-@app.route("/style.css")
+@app.route("/css/style.css")
 def style():
-    return flask.send_file("./Frontend/style.css")
+    return flask.send_file("./Frontend/css/style.css")
 
 
 @app.route("/_tasks.css")
@@ -49,9 +49,19 @@ def weather_not_av():
     return flask.send_file("./Frontend/3rdParty/FreeIcons/weather-none-available.svg")
 
 
-@app.route("/weather-cards.css")
+@app.route("/css/weather-cards.css")
 def weather_cards_css():
-    return flask.send_file("./Frontend/weather-cards.css")
+    return flask.send_file("./Frontend/css/weather-cards.css")
+
+
+@app.route("/css/navbar-styles.css")
+def navbar_styles():
+    return flask.send_file("./Frontend/css/navbar-styles.css")
+
+
+@app.route("/css/language-switch.css")
+def language_switch_styles():
+    return flask.send_file("./Frontend/css/language-switch.css")
 
 
 @app.route("/weather-cards.html")
