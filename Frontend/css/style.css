@@ -82,6 +82,25 @@ body {
 }
 
 #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#_7days-weather-box {
+    display: flex;
+    border: 5px dot-dash royalblue;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    list-style: none;
+    padding: 8px;
+    border-radius: 20px;
+    box-sizing: border-box;
+
 
 }
 

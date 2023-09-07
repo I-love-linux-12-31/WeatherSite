@@ -12,8 +12,14 @@
     font-family: "Open Sans", sans-serif;
 }
 
+.weather-card-big-week {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .weather-card-big p {
     padding: 0;
+    margin: 0;
 }
 
 .weather-card-big-image {
