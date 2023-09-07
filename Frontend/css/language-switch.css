@@ -1,6 +1,4 @@
-/* Minecraft switch made by: csozi | Website: english.csozi.hu*/
 
-/* The switch - the box around the slider */
 .language-switch {
     font-size: 17px;
     position: relative;
@@ -11,14 +9,12 @@
     margin-left: 1em;
 }
 
-/* Hide default HTML checkbox */
 .language-switch input {
     opacity: 0;
     width: 0;
     height: 8px;
 }
 
-/* The slider */
 .language-switch-slider {
     position: absolute;
     cursor: pointer;

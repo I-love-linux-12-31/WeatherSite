@@ -5,7 +5,15 @@
     border-radius: 15px;
     padding: 8px;
     text-decoration: none;
-    box-shadow: 0 5px 5px 0 rgba(128, 128, 128, 0.4);
+    opacity: 0.8;
+
+    color: azure;
+    font-size: 22px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.weather-card-big p {
+    padding: 0;
 }
 
 .weather-card-big-image {
