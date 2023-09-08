@@ -69,5 +69,10 @@ def weather_cards_html():
     return flask.send_file("./Frontend/__weather_card.html")
 
 
+@app.route("/js/main.js")
+def main_js():
+    return flask.send_file("./Frontend/js/main.js")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")
