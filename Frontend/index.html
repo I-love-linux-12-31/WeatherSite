@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="navbar"> <!-- Панель навигации -->
+<header class="navbar"> <!-- Панель навигации -->
 
     <img rel="svg+xml" src="favicon.svg" alt="*Logo*" height="64px">
 
@@ -33,17 +33,38 @@
             <p class="nav-item-r">
                 <a class="nav-link active" aria-current="page" href="/">___</a>
             </p>
+            
+            
+            <label class="language-switch"> <!-- Theme switch -->
+                <input type="checkbox" id="theme-select-checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🌒</p>
+                <p class="language-switch-on">🌞</p>
+                <script type="text/javascript">
+
+		document.getElementById("theme-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+		})
+                </script>
+            </label>
+            
 
             <label class="language-switch">
-                <input type="checkbox">
+                <input type="checkbox" id="lang-select-checkbox">
                 <span class="language-switch-slider"></span>
                 <p class="language-switch-off">🇺🇸</p>
                 <p class="language-switch-on">🇷🇺</p>
+                <script type="text/javascript">
+
+		document.getElementById("lang-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+		})
+                </script>
             </label>
 
         </div>
 
-</div>
+</header>
 <br>
 
 <div id="_7days-weather-box"> <!-- Блок на погодные данные на 7 дней -->
@@ -72,6 +93,25 @@
 <!--############################################################################################################-->
 
 <br>
+<pre>
+
+
+
+    1
+
+    2
+
+    3
+
+
+    4
+
+    45
+
+    6
+    6
+    667
+</pre>
 
 <!--************************************************-->
 <!--************************************************-->
@@ -118,12 +158,12 @@
     </div>
         </td>
         <td>
-    <div class="footer-card">
+    <address class="footer-card">
         <pre class="footer-contacts">
 Administrator contacts:
 Email: <a class="footer-contacts" href="mailto:yaroslav.12.31.dev@gmail.com">yaroslav.12.31.dev@gmail.com</a>
 Phone: <a class="footer-contacts" href="tel:+70000000">+70000000</a></pre>
-    </div>
+    </address>
         </td>
     </tr>
     </tbody>
