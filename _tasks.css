@@ -1,4 +1,8 @@
 /* Not include to final site !!!*/
+
+
+
+
 .task1 {
     color: azure;
     font-family: "Open Sans", sans-serif;
@@ -10,4 +14,48 @@
     padding: none;
     font-size: 18px;
     font-family: "Open Sans", sans-serif;
+}
+main {display: flex;}
+
+aside {
+/*    position: fixed;
+    right: 0;*/
+    padding-left: 17px;
+    font-family: "Open Sans", sans-serif;
+    display: inline-block;
+
+}
+
+.content-wrap {
+    width: calc(100% - 300px);
+    margin-right: 20px;
+}
+
+article + pre {
+    /*border: 5px dot-dot-dash royalblue;*/
+    border: 5px dotted purple;
+}
+aside article:active {
+    box-shadow: 2px 2px 5px #fc894d;
+}
+article {
+    color: seagreen;
+}
+
+aside {
+    background-color: burlywood;
+    border-top-left-radius: 50px 100px;
+
+    border: 5px dashed royalblue;
+}
+
+aside article:hover {
+    background-color: bisque;
+    color: aliceblue;
+
+}
+
+#lnk1:visited {
+    color: forestgreen;
+/*    text-decoration-color: hotpink;*/
 }

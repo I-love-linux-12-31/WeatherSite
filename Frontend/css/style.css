@@ -83,7 +83,7 @@ body {
 }
 
 #footer {
-    margin-bottom: -50px;
+    /*margin-bottom: -50px;*/
     position: fixed;
     bottom: 0;
     left: 0;
