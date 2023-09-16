@@ -9,7 +9,7 @@
 /*    justify-content: space-between;
     align-items: center;*/
     box-sizing: border-box;
-    background-color: #25293d;
+    /*background-color: #25293d; Moved to themes*/
     padding: 8px;
 
     border-radius: 20px;

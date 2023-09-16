@@ -69,6 +69,11 @@ def white_theme_styles():
     return flask.send_file("Frontend/css/white-theme/style.css")
 
 
+@app.route("/css/dark-theme/style.css")
+def dark_theme_styles():
+    return flask.send_file("Frontend/css/dark-theme/style.css")
+
+
 @app.route("/weather-cards.html")
 def weather_cards_html():
     return flask.send_file("Frontend/__weather_card.html")
@@ -77,6 +82,10 @@ def weather_cards_html():
 @app.route("/js/main.js")
 def main_js():
     return flask.send_file("Frontend/js/main.js")
+
+@app.route("/js/themes.js")
+def themes_js():
+    return flask.send_file("Frontend/js/themes.js")
 
 
 if __name__ == '__main__':
