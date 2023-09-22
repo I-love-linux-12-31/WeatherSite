@@ -1,11 +1,11 @@
 console.log("JS working.")
 
-/*eckbox = document.getElementById("lang-select-checkbox");
-	if (checkbox != null){
-		checkbox.addEventListener('change', () => {
-		  console.log("Состояние чекбокса изменнено")
-		})
-	}
-	else {
-		  console.log("Error")
-	}*/
+const successCallback = (position) => {
+  console.log(position);
+};
+
+const errorCallback = (error) => {
+  console.log(error);
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
