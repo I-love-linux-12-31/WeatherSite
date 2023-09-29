@@ -150,11 +150,64 @@
 <!--############################################################################################################-->
 
 <section>
+<form>
+    <input type="text" id="form-text-1" name="text-data" required minlength="4" value="1:">
+    <span class="validity"></span>
+    <input type="tel" placeholder="Your phone number here" required>
+    <span class="validity"></span>
+    <input type="email" value="email@email.net" required>
+    <span class="validity"></span>
+    <input type="password" placeholder="Enter password" required>
+    <span class="validity"></span>
+    <input type="file">
+    <span class="validity"></span>
+    <input type="checkbox" checked="checked">
+    <span class="validity"></span>
+    <label style="display: inline-block">
+        <p style="display: inline-block">1)</p>
+        <input type="radio" style="display: inline-block" name="radio_1">
+        <p style="display: inline-block">2)</p>
+        <input type="radio" style="display: inline-block" name="radio_1">
 
+    </label>
+    <input type="datetime-local">
+    <input type="date">
+    <input type="submit">
+    <button>BTN 1</button>
+    <textarea>Text...</textarea>
+    <br>
+    <textarea cols="8" rows="16" minlength="2" maxlength="4" placeholder="0" required>Text...</textarea>
+    <fieldset>
+    <legend>Como boxes:</legend>
+        <label for="select-items-obj">
+        <select name="select-1" id="select-items-obj" required multiple size="7">
+            <option value="">Select data</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <select name="select-1" id="select-items-obj-2" required>
+            <option value="">Select data</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </label>
+    </fieldset>
+
+
+</form>
 </section>
 
+<iframe src="https://YaroslavK-12-31.asuscomm.com:11383" title="Cloud" width="400px" height="400px"></iframe>
 
-
+<video controls width="250">
+    <!--  -->
+    <source src="https://yk-hosted-12-31.ydns.eu:11383/index.php/s/6okmBLA7MBEGFX3/download/1.webmv" type="video/webm"/>
+</video>
 
 
 <!--************************************************-->
@@ -164,35 +217,24 @@
 
 <!--************************************************-->
 <footer id="footer"> <!-- Подвал страницы -->
-    <table class="footer-table">
-    <tbody>
-    <tr>
+    <div class="footer-table">
 <!--        <td>-->
 <!--            <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png" class="footer-card">-->
 <!--        </td>-->
-        <td>
-            <div class="footer-card">
-                <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png">
-            </div>
-        </td>
 
-        <td style="align-content: center; width: 50%">
     <div class="footer-card">
         <!-- openweather original logo https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png -->
         <a class="footer-link" href="/404">On <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png"> data.</a>
     </div>
-        </td>
-        <td>
+
     <address class="footer-card">
         <pre class="footer-contacts">
 Administrator contacts:
 Email: <a class="footer-contacts" href="mailto:yaroslav.12.31.dev@gmail.com">yaroslav.12.31.dev@gmail.com</a>
 Phone: <a class="footer-contacts" href="tel:+70000000">+70000000</a></pre>
     </address>
-        </td>
-    </tr>
-    </tbody>
-    </table>
+
+    </div>
 
 
 

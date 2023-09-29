@@ -64,3 +64,40 @@ aside article:hover {
 .task3-1 {
     color: #652704;
 }
+
+form input:invalid  + span::after{
+    padding-left: 5px;
+    content: "✖";
+}
+
+form input:valid  + span::after{
+    padding-left: 5px;
+    content: "✓";
+}
+
+form input {
+    display: list-item;
+
+    margin-bottom: 8px;
+}
+
+form
+{
+/*    align-items: baseline;
+    justify-content: space-between;*/
+    background: dimgrey;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+
+form input:focus {
+    border: 2px double  royalblue;
+}
+
+form input::placeholder {
+    color: red;
+    font-style: oblique;
+}

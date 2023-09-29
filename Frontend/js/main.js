@@ -8,6 +8,7 @@ const errorCallback = (error) => {
   console.log(error);
 };
 
+/* // Disabled geolocation todo: make gui
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 var getJSON = function(url, callback) {
@@ -32,4 +33,4 @@ function(err, data) {
   } else {
     alert('Your city: ' + data["city"]);
   }
-});
+});*/
