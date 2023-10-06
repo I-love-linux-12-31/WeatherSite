@@ -4,7 +4,11 @@ import datetime
 from flask import Flask
 import flask
 
+from Backend.tasks_backend import blueprint as tasks_blueprint
+
 app = Flask(__name__)
+
+app.register_blueprint(tasks_blueprint)
 
 app.config["SECRET_KEY"] = secrets.token_hex()
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(
@@ -31,12 +35,6 @@ def test_img():
 @app.route("/css/style.css")
 def style():
     return flask.send_file("Frontend/css/style.css")
-
-
-@app.route("/_tasks.css")
-def tasks():
-    print("NOT INCLUDE TO FINAL SITE !!!")
-    return flask.send_file("./_tasks.css")
 
 
 @app.route("/3rdParty/logo_white_cropped.png")
