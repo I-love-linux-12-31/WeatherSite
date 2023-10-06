@@ -101,3 +101,49 @@ form input::placeholder {
     color: red;
     font-style: oblique;
 }
+
+.task-item {
+    padding: 40px;
+}
+
+
+@media only screen and (max-width: 1090px) {
+    /* Phones */
+
+    .task5-b1 {
+        display: flex; align-content: space-between; justify-items: center; background: #fc894d;
+    }
+
+    #t5-main-block-1 {
+        visibility: hidden;
+        display: none;
+    }
+    #ti5-m {
+        width: 100%;
+
+    }
+    #ti6-m {
+        width: 100%;
+        border-radius: 20px;
+
+    }
+
+}
+
+@media only screen and (min-width: 1091px) {
+    /* Desktop and big screen*/
+    #t5-mobile-block-1 {
+        visibility: hidden;
+        display: none;
+    }
+        .task5-b1 {
+        display: flex; align-content: flex-start; background: #fc894d;
+    }
+
+    #ti2 {
+        width: 100%;
+    }
+    #ti5 {
+         width: 100%;
+    }
+}
