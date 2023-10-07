@@ -1,28 +1,64 @@
-.weather-card-big {
-    display: inline-block;
-    align-items: center;
-    background-color: rgba(24, 78, 101, 0.6);
-    border-radius: 15px;
-    padding: 8px;
-    text-decoration: none;
-    opacity: 0.8;
+@media only screen and (min-width: 1091px) {
+    /* Desktop and big screen*/
+    .weather-card-big {
+        display: inline-block;
+        align-items: center;
+        background-color: rgba(24, 78, 101, 0.6);
+        border-radius: 15px;
+        padding: 8px;
+        text-decoration: none;
+        opacity: 0.8;
 
-    color: azure;
-    font-size: 22px;
-    font-family: "Open Sans", sans-serif;
+        color: azure;
+        font-size: 22px;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .weather-card-big-week {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .weather-card-big p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .weather-card-big-image {
+        height: 5em;
+        width: 5em;
+    }
 }
 
-.weather-card-big-week {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+@media only screen and (max-width: 1090px) {
+    /* Phones */
+    .weather-card-big {
+        display: inline-block;
+        align-items: center;
+        background-color: rgba(24, 78, 101, 0.6);
+        border-radius: 15px;
+        padding: 8px;
+        text-decoration: none;
+        opacity: 0.8;
 
-.weather-card-big p {
-    padding: 0;
-    margin: 0;
-}
+        color: azure;
+        font-size: 20px;
+        font-family: "Open Sans", sans-serif;
+    }
 
-.weather-card-big-image {
-    height: 5em;
-    width: 5em;
+    .weather-card-big-week {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .weather-card-big p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .weather-card-big-image {
+        height: 4em;
+        width: 4em;
+    }
+
 }

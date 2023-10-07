@@ -85,3 +85,8 @@
 .nav-link-input::placeholder {
     font-weight: bold;
 }
+
+#nav-header-left {
+    z-index: 4;
+
+}

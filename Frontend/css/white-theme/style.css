@@ -11,3 +11,11 @@ body {
 .navbar-right {
     background-color: #32555b;
 }
+
+@media only screen and (max-width: 1090px) {
+    /* Phones */
+#nav-header-left {
+    background-color: #b0dae3;
+    opacity: 100%;
+}
+}

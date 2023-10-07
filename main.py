@@ -27,6 +27,11 @@ def icon():
     return flask.send_file("Frontend/favicon.svg")
 
 
+@app.route("/menu_icon.svg")
+def menu_icon():
+    return flask.send_file("Frontend/3rdParty/FreeIcons/view-compact-symbolic.svg")
+
+
 @app.route("/test.jpg")
 def test_img():
     return flask.send_file("Frontend/test.jpg")
@@ -36,6 +41,10 @@ def test_img():
 def style():
     return flask.send_file("Frontend/css/style.css")
 
+
+@app.route("/css/burger-menu.css")
+def burger_menu():
+    return flask.send_file("Frontend/css/burger-menu.css")
 
 @app.route("/3rdParty/logo_white_cropped.png")
 def open_weather_logo_demo():
@@ -80,6 +89,7 @@ def weather_cards_html():
 @app.route("/js/main.js")
 def main_js():
     return flask.send_file("Frontend/js/main.js")
+
 
 @app.route("/js/themes.js")
 def themes_js():
