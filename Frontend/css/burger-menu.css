@@ -114,6 +114,7 @@
     /* Desktop and big screen*/
 
         .menu-btn {
+            display: none;
     }
 
 }

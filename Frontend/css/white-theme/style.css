@@ -19,3 +19,9 @@ body {
     opacity: 100%;
 }
 }
+
+.text-404 {
+    background: #25293d;
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+}

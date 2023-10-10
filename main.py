@@ -95,6 +95,10 @@ def main_js():
 def themes_js():
     return flask.send_file("Frontend/js/themes.js")
 
+@app.errorhandler(404)
+def page_not_found(error):
+   return flask.send_file("Frontend/404.html"), 404
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")
