@@ -5,7 +5,7 @@
     top: 0px; left: 0px;
 
 }
-@media only screen and (max-width: 1090px) {
+@media only screen and (max-width: 1190px) {
     /* Phones */
     .menu-btn {
         margin-left: 0;
@@ -55,7 +55,7 @@
     left: 32px;
     top: 90px;
     border-radius: 32px;
-    height: 256px;
+    height: 300px;
 }
 
 
@@ -110,7 +110,7 @@
 
 
 
-@media only screen and (min-width: 1091px) {
+@media only screen and (min-width: 1191px) {
     /* Desktop and big screen*/
 
         .menu-btn {

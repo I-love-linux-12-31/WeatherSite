@@ -92,6 +92,8 @@
     display: flex;
     border: 5px dot-dash royalblue;
 
+    flex-wrap: wrap;
+
     align-items: center;
     justify-content: center;
     text-align: center;
