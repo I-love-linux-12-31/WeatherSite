@@ -28,6 +28,7 @@ aside {
 
 .content-wrap {
     /*width: calc(100% - 300px);*/
+    position: relative;
     width: 100%;
     margin-right: 20px;
 }
