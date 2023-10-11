@@ -148,3 +148,162 @@ form input::placeholder {
          width: 100%;
     }
 }
+
+#b1 {
+    position: relative;
+    width: 256px;
+    height: 64px;
+    background: #fc894d;
+
+}
+
+@keyframes b1-anim {
+    from {}
+    10% {
+        transform: rotate(45deg);
+        width: 180px;
+        height: 50px;
+    }
+    25% {
+        transform: rotate(10deg);
+        width: 128px;
+        height: 32px;
+    }
+    50% {
+        transform: rotate(-10deg);
+        width: 180px;
+        height: 50px;
+    }
+    75% {
+        transform: rotate(-45deg);
+        width: 210px;
+        height: 58px;
+    }
+    to {
+        transform: rotate(0deg);
+        width: 256px;
+        height: 64px;
+    }
+
+}
+
+@keyframes b2-anim {
+    from {}
+    10% {
+        transform: rotate(45deg);
+        width: 180px;
+        height: 50px;
+        color: #fc894d;
+    }
+    25% {
+        transform: rotate(10deg);
+        width: 128px;
+        height: 32px;
+        color: orange;
+    }
+    50% {
+        transform: rotate(-10deg);
+        width: 180px;
+        height: 50px;
+        color: #fc894d;
+    }
+    75% {
+        transform: rotate(-45deg);
+        width: 210px;
+        height: 58px;
+        color: red;
+    }
+    to {
+        transform: rotate(0deg);
+        width: 256px;
+        height: 64px;
+        color: pink;
+    }
+
+}
+
+
+#b1:focus {
+    /*animation-name: b1-anim;
+    animation-duration: 3s;*/
+    animation: b1-anim 10s alternate ease-in -.2s;
+}
+
+#b2 {
+    transition-delay: .3s;
+    width: 256px;
+    height: 64px;
+    background: #652704;
+}
+#b2:active {
+     animation: b2-anim 0.3s alternate ease-out infinite;
+}
+
+@keyframes b3-anim {
+    from {}
+    10% {
+
+        transform: skewY(0deg);
+        color: pink;
+    }
+    25% {
+        transform: skewY(25deg);
+        color: dodgerblue;
+    }
+    50% {
+        transform: skewY(50deg);
+        color: pink;
+    }
+    75% {
+        transform: skewY(-25deg);
+        color: dodgerblue;
+    }
+    to {
+        transform: skewY(0deg);
+        color: pink;
+    }
+
+}
+
+
+
+#b3 {
+    width: 256px;
+    height: 64px;
+    background: yellowgreen;
+}
+#b3:focus {
+    animation: b3-anim 10s alternate ease-in -.2s;
+}
+
+@keyframes b4-anim {
+    from {}
+    10% {
+
+        transform: skewY(0deg);
+        color: pink;
+    }
+    25% {
+        transform: skewY(25deg);
+        color: dodgerblue;
+    }
+    50% {
+        transform: skewY(50deg);
+        color: pink;
+    }
+    75% {
+        transform: skewY(-25deg);
+        color: dodgerblue;
+    }
+    to {
+        transform: skewY(0deg);
+        color: pink;
+    }
+
+}
+
+#b4 {
+    width: 256px;
+    height: 64px;
+    background: steelblue;
+}
