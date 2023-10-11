@@ -307,3 +307,43 @@ form input::placeholder {
     height: 64px;
     background: steelblue;
 }
+
+#tm1 {
+    display: flex;
+    /*  visibility: hidden;*/
+
+
+    left: 128px;
+
+    margin: 0;
+    padding: 16px 0;
+    list-style: none;
+
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+    background: blue;
+    opacity: 0;
+
+}
+
+#m1:hover  ~ #tm1 {
+/*    visibility: visible;
+    left: 32px;
+    top: 90px;
+    border-radius: 32px;
+    height: 300px;*/
+    background: red;
+    transform: translateX(256px);
+    opacity: 1;
+}
+
+#m1:hover ~ #tm1 > button::before{
+    background: #fc894d;
+    height: 256px;
+}
+
+#m1:hover ~ #tm1 > button::after {
+    background: green;
+    height: 256px;
+}
+

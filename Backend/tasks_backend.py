@@ -13,3 +13,9 @@ def tasks_page():
 def tasks():
     print("NOT INCLUDE TO FINAL SITE !!!")
     return flask.send_file("./_tasks.css")
+
+
+@blueprint.route("/1.webm")
+def webm():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/1.webm")
