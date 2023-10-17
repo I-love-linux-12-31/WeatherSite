@@ -339,10 +339,10 @@ form input::placeholder {
 #tm1 {
     display: flex;
     /*  visibility: hidden;*/
+    position: relative;
 
-
-    left: 128px;
-
+    left: -128px;
+    top: -2em;
     margin: 0;
     padding: 16px 0;
     list-style: none;
@@ -354,6 +354,21 @@ form input::placeholder {
 
 }
 
+#tm1 button {
+    border-radius: 5px;
+    background-color: #d6f5f4;
+    height: 3em;
+}
+
+#tm1 button:hover {
+    border-radius: 5px;
+        height: 4em;
+    border: 5px inset rgba(91, 196, 187, 0.9);;
+}
+#m1 {
+    background-color: yellowgreen;
+}
+
 #m1:hover  ~ #tm1 {
 /*    visibility: visible;
     left: 32px;
@@ -361,9 +376,21 @@ form input::placeholder {
     border-radius: 32px;
     height: 300px;*/
     background: red;
-    transform: translateX(256px);
+    transform: translateX(8em);
     opacity: 1;
 }
+
+#tm1:hover{
+/*    visibility: visible;
+    left: 32px;
+    top: 90px;
+    border-radius: 32px;
+    height: 300px;*/
+    background: red;
+    transform: translateX(8em);
+    opacity: 1;
+}
+
 
 /*#m1:hover ~ #tm1 > button::before{
     background: #fc894d;
@@ -371,9 +398,35 @@ form input::placeholder {
     border: 7px lightgreen dotted;
 }*/
 
-#m1:hover ~ #tm1 > button::after {
+/*#m1:hover ~ #tm1 > button::after {
     background: green;
     height: 256px;
     border: 7px deeppink dotted;
+}*/
+
+
+.video-card-cls {
+    width: 10em;
+    height: 10em;
+    background-color: lightblue;
+
+    opacity: 0;
+    position: relative;
+    left: -10em;
+    transition: opacity .9s ease, left 1s ease;
+    z-index: 5;
+}
+.video-cls video {
+    position: relative;
+    top: -10em;
+    z-index: 1;
 }
 
+.video-cls:hover .video-card-cls{
+    opacity: 1;
+    left: 3em;
+}
+
+.video-cls:hover .video-card-cls p::before{
+    content: "This is my video... I don't know what say more...";
+}
