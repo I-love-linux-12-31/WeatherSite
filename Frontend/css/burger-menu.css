@@ -13,19 +13,19 @@
         z-index: 1;
     }
 #nav-header-left {
-  display: flex;
-  position: fixed;
-  visibility: hidden;
-  top: 128px;
-  left: -100%;
-  width: 300px;
-  height: 50%;
-  margin: 0;
-  padding: 16px 0;
-  list-style: none;
+    display: flex;
+    position: fixed;
+    visibility: hidden;
+    top: 128px;
+    left: -100%;
+    width: 300px;
+    height: 50%;
+    margin: 0;
+    padding: 16px 0;
+    list-style: none;
 
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-  transition-duration: .25s;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
 
     opacity: 100%;
 }

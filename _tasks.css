@@ -306,7 +306,35 @@ form input::placeholder {
     width: 256px;
     height: 64px;
     background: steelblue;
+
+    transition: background-color 2.3s ease, border 0.2s linear;
+
 }
+
+#b4:hover {
+    text-shadow: 1px 1px 0 #FFE3BD, 2px 2px 0 #FFE3BD, 3px 3px 0 #FFE3BD, 4px 4px 0 #FFE3BD, 5px 5px 0 #FFE3BD;
+    border: 5px inset #9F908F;
+    background-color: #E0CABB;
+}
+
+#b4:hover ~ #p2::after {
+    /*border: 7px lightgreen dotted;*/
+    content: "😀";
+}
+
+#b4:hover ~ #p2::before {
+    /*border: 7px lightgreen dotted;*/
+    content: "😢";
+}
+/*#b4:hover::before {*/
+/*    border: 7px lightgreen dotted;*/
+/*}*/
+
+/*#b4:hover::before {*/
+/*    border: 7px deeppink dotted;*/
+/*}*/
+
+
 
 #tm1 {
     display: flex;
@@ -337,13 +365,15 @@ form input::placeholder {
     opacity: 1;
 }
 
-#m1:hover ~ #tm1 > button::before{
+/*#m1:hover ~ #tm1 > button::before{
     background: #fc894d;
     height: 256px;
-}
+    border: 7px lightgreen dotted;
+}*/
 
 #m1:hover ~ #tm1 > button::after {
     background: green;
     height: 256px;
+    border: 7px deeppink dotted;
 }
 

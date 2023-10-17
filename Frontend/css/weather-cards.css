@@ -67,3 +67,20 @@
     }
 
 }
+
+.weather-card-big {
+/*    transition: background-color .5s ease, border 1.5s ease;*/
+/*    display: inline-flex;*/
+    /*position: relative;*/
+    position: static;
+    display: inline-block;
+
+}
+
+.weather-card-big:hover {
+    /*text-shadow: 1px 1px 0 rgba(37, 151, 155, 0.3), 2px 2px 0 rgba(28, 189, 196, 0.6), 3px 3px 0 rgba(28, 189, 196, 0.8), 4px 4px 0 rgba(14, 216, 225, 0.9), 5px 5px 0 rgba(14, 216, 225, 1);*/
+    border: 5px inset #9F908F;
+    content: "WTF";
+    background-color: red;
+    color: cyan;
+}

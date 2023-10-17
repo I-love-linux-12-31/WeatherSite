@@ -1,6 +1,7 @@
 .footer-card {
 
     /*display: inline-block;*/
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,15 +83,33 @@
 
 #footer {
     /*margin-bottom: -50px;*/
-/*    position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;*/
+    right: 0;
+
+    min-height: 32px;
+}
+
+.footer-table {
+    position: relative;
+    opacity: 0;
+    top: 128px;
+    transition: opacity .9s ease, top 1s ease;
+}
+#footer:hover  .footer-table {
+    top: 0;
+    opacity: 1;
+}
+#footer:hover{
+    /*background-color: red;*/
+ /*   height: 100px;*/
 }
 
 #_7days-weather-box {
     display: flex;
-    border: 5px dot-dash royalblue;
+    /*position: relative;*/
+    border: 5px dotted royalblue;
 
     flex-wrap: wrap;
 
@@ -102,7 +121,7 @@
     padding: 8px;
     border-radius: 20px;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 1;
 
 
 }
