@@ -9,7 +9,6 @@
         text-decoration: none;
         opacity: 0.8;
 
-        z-index: -1;
         position: relative;
 
         color: azure;
@@ -46,7 +45,6 @@
         opacity: 0.8;
 
         color: azure;
-        z-index: -1;
         font-size: 18px;
         font-family: "Open Sans", sans-serif;
     }
