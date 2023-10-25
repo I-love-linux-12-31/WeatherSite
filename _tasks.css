@@ -544,15 +544,16 @@ form input::placeholder {
     border-radius: 15px;
 
     position: absolute;
-    width: 7em;
-    height: 7em;
+/*    width: 7em;
+    height: 7em;*/
     background-color: #9F908F66;
     backdrop-filter: blur(5px);
 }
 
 .task-card-data {
     position: relative;
-
+/*    display: flex;
+    align-content: space-between;*/
     z-index: 4;
 
 }
@@ -673,6 +674,7 @@ top: 1em; left: 10em;
 }
 
 .share-button{
+    cursor: crosshair;
     background-color: #d6f5f433;
     position: relative;
     border-radius: 32px;
@@ -720,6 +722,8 @@ top: 1em; left: 10em;
 
 
 .card {
+
+
   position: relative;
   color: #fff;
 
@@ -733,7 +737,7 @@ top: 1em; left: 10em;
 
 .card p {
   font-size: 0.95rem;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .card span {
@@ -869,4 +873,22 @@ top: 1em; left: 10em;
     opacity: 1;
     height: 100%;
   }
+}
+
+.task-card-data input {
+    padding-left: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background-color: #9F908F33;
+    color: azure;
+}
+
+.task-card-splash-1 {
+
+    height: calc(var(--base-splash-size) * 3/4);
+    width: calc(var(--base-splash-size) * 3/4);
+}
+
+:root {
+    --base-splash-size: 9em;
 }
