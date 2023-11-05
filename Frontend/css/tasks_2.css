@@ -275,3 +275,74 @@ p {
     align-items: center;
 
 }
+
+.container-3 {
+    display: grid;
+    background: cornflowerblue;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+.task8-footer_2-block p {
+    font-family: "Open Sans", sans-serif;
+    color: azure;
+    font-weight: bold;
+}
+.task8-footer_2-block h3 {
+    margin-left: 8px;
+    margin-bottom: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em;
+    color: azure;
+    font-weight: bold;
+}
+
+.task8-footer_2-block {
+    border: none;
+}
+
+@media only screen and (min-width: 1191px) {
+    /* Desktop and big screen*/
+    .t8-f2-block-0{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 1 / 1 / 1;
+        /*background: royalblue;*/
+    }
+    .t8-f2-block-1{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 2 / 1 / 3;
+        /*background: green;*/
+    }
+
+    .t8-f2-block-2{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 3 / 1 / 4;
+        /*background: red;*/
+    }
+    .t8-f2-block-3{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 4 / 1 / 5;
+        /*background: red;*/
+    }
+
+}
+@media only screen and (min-width: 1100px) and (max-width: 1360px) {
+/* lite Desktop and laptops */
+    .t8-f2-block-0{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 1 / 1 / 1;
+        /*background: royalblue;*/
+    }
+    .t8-f2-block-1{
+        /*         rs / cs / re / ce */
+        grid-area: 1 / 2 / 1 / 3;
+        /*background: green;*/
+    }
+
+    .t8-f2-block-2{
+        /*         rs / cs / re / ce */
+        grid-area: 2 / 1 / 2 / 2;
+        /*background: red;*/
+    }
+
+}
