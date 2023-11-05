@@ -27,12 +27,35 @@
 
 <!--    <script type="text/javascript" src="/js/main.js"></script>-->
     <script type="text/javascript" src="/js/themes.js"></script>
+    <script type="text/javascript" src="/js/task_9.js"></script>
 
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
+
+
+<section>
+    <button id="draw-btn">Рисование</button>
+        <script type="text/javascript">
+        var draw_mode = false;
+        document.getElementById("draw-btn").addEventListener('click', () => {
+          draw_mode ^= 1;
+          if (draw_mode) {
+              document.getElementById("draw-btn").style.backgroundColor = "green";
+              console.log("draw enabled");
+          }
+          else {
+              document.getElementById("draw-btn").style.backgroundColor = "gray";
+              console.log("draw disabled");
+          }
+
+        })
+
+    </script>
+</section>
+
 <main>
     <div class="task8-header">
         <p>Header</p>
@@ -46,6 +69,15 @@
     </div>
     <div class="task8-main">
         <p>Main</p>
+        <div style="border: none; background-color: lightblue; margin-top: 25px;margin-left: 15px;">
+            <button id="start-pr9">Запуск 9 практики</button>
+            <script type="text/javascript">
+                document.getElementById("start-pr9").addEventListener('click', () => {
+                  main();
+                })
+
+            </script>
+        </div>
 
     </div>
     <div class="task8-aside">
@@ -98,6 +130,34 @@
     </section>
 </form>
 <br>
+
+<section>
+    <button id="like-button" style="width: 4em; height: 4em; border-radius: 1.1em;">Like</button>
+    <p id="like-counter-p">Liked: 0</p>
+    <script type="text/javascript">
+        let like_status = false;
+        let like_counter = 0;
+        document.getElementById("like-button").addEventListener('click', () => {
+          like_counter += 1;
+          document.getElementById("like-counter-p").innerText = "Pressed: " + like_counter.toString();
+          like_status ^= 1;
+          console.log(like_counter)
+          if (like_status) {
+              document.getElementById("like-button").style.backgroundColor = "red";
+              console.log("+");
+          }
+          else {
+              document.getElementById("like-button").style.backgroundColor = "gray";
+              console.log("-");
+          }
+
+        })
+
+    </script>
+</section>
+<br>
+
+
 <br>
 <footer>
     <section class="container-3">
