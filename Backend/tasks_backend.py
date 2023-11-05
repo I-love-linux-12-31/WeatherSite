@@ -37,3 +37,21 @@ def tasks_2_html():
 def tasks_9_js():
     print("NOT INCLUDE TO FINAL SITE !!!")
     return flask.send_file("./Frontend/js/pr9.js")
+
+
+@blueprint.route("/js/task_10.js")
+def tasks_10_js():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/js/pr10.js")
+
+
+@blueprint.route("/tasks/tasks_3.html")
+def tasks_10_html():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/tasks_page_3.html")
+
+
+@blueprint.route("/css/tasks_3.css")
+def tasks_10_css():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/css/tasks_3.css")

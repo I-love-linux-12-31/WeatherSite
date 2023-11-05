@@ -82,7 +82,13 @@
         min-height: 512px;
     }
 
-div {
+.task8-main-main div {
+    border: 5px solid red;
+    border-radius: 25px;
+    margin: 8px;
+}
+
+.container-1 div {
     border: 5px solid red;
     border-radius: 25px;
     margin: 8px;

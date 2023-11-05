@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8</title>
+
+    <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
+
+    <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
+    <link rel="stylesheet" href="/css/dark-theme/style.css" class="dark-theme-importer">
+
+    <link rel="stylesheet" href="/css/style.css" class="dark-theme-importer"> <!-- -->
+
+
+
+
+    <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
+    <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
+    <link rel="stylesheet" href="/css/tasks_2.css"> <!-- -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+<!--    <script type="text/javascript" src="/js/main.js"></script>-->
+    <script type="text/javascript" src="/js/themes.js"></script>
+    <script type="text/javascript" src="/js/task_9.js"></script>
+    <script type="text/javascript" src="/js/task_10.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="" style="margin-left: 32px;">
+        <label class="text-404">
+          <h2><a href="/" style="text-decoration: none; color: aquamarine">Go to home page.</a></h2>
+        </label>
+    </div>
+
+    <section>
+        <label for="captcha_input">
+            <input id="captcha_input" type="text" required>
+            <button id="generate-captcha-btn">Generate</button>
+            <script type="text/javascript">
+                document.getElementById("generate-captcha-btn").addEventListener('click', () => {
+                    createImageFromString(document.getElementById("captcha_input").value)
+                })
+            </script>
+        </label>
+        <div class="capcha-container">
+            <div id="captcha" style="width: 512px; height: 128px;"></div>
+            <script type="text/javascript">
+                var captcha_parent = document.getElementById("captcha");
+            </script>
+        </div>
+    </section>
+
+</body>
+</html>

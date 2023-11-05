@@ -53,7 +53,7 @@ document.addEventListener("mousemove", function(event) {
 
   // Get mouse coordinates
   let x = event.clientX;
-  let y = event.clientY;
+  let y = event.clientY + 32;
 
   // Create new div element
   let newDiv = document.createElement("div");
