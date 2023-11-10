@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
     <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
     <link rel="stylesheet" href="/css/tasks_2.css"> <!-- -->
+    <link rel="stylesheet" href="/css/tasks_3.css"> <!-- -->
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,12 +28,33 @@
 
 <!--    <script type="text/javascript" src="/js/main.js"></script>-->
     <script type="text/javascript" src="/js/themes.js"></script>
-    <script type="text/javascript" src="/js/task_9.js"></script>
+    <!--<script type="text/javascript" src="/js/task_9.js"></script>-->
     <script type="text/javascript" src="/js/task_10.js"></script>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> <!-- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": false,
+          "positionClass": "toast-top-left",
+          "preventDuplicates": true,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+    </script>
 </head>
 <body>
 
@@ -43,22 +65,111 @@
     </div>
 
     <section>
-        <label for="captcha_input">
-            <input id="captcha_input" type="text" required>
-            <button id="generate-captcha-btn">Generate</button>
-            <script type="text/javascript">
-                document.getElementById("generate-captcha-btn").addEventListener('click', () => {
-                    createImageFromString(document.getElementById("captcha_input").value)
-                })
-            </script>
-        </label>
-        <div class="capcha-container">
-            <div id="captcha" style="width: 512px; height: 128px;"></div>
-            <script type="text/javascript">
-                var captcha_parent = document.getElementById("captcha");
-            </script>
+
+        <div class="captcha-container" id="captcha-container">
+            <label for="login">
+
+                <input id="login" type="email" required placeholder="Login">
+                <input id="password" type="password" required placeholder="Password">
+                <!--<input id="captcha_input_s" type="submit" class="login-submit" required>-->
+                <button id="login-btn" disabled="disabled">Login</button>
+                <script type="text/javascript">
+                    var login_btn = document.getElementById("login-btn");
+                    login_btn.disabled = "disabled";
+                    login_btn.style.backgroundColor = "gray";
+                    login_btn.addEventListener('click', () => {
+                        console.log("LOGIN...")
+                    });
+                </script>
+                <!--<input id="captcha_input" type="text">
+                <button id="generate-captcha-btn">Generate</button>
+                <script type="text/javascript">
+                    document.getElementById("generate-captcha-btn").addEventListener('click', () => {
+                        createImageFromString(document.getElementById("captcha_input").value)
+                    })
+                </script>-->
+            </label>
+            <div>
+                <div id="captcha" style="width: 512px; height: 128px;"></div>
+                <script type="text/javascript">
+                    var captcha_parent = document.getElementById("captcha");
+                </script>
+                <label for="captcha-submit">
+                    <input id="captcha-submit" type="text" required>
+                    <button id="captcha-submit-btn">Apply</button>
+                    <button id="captcha-change-btn">Regenerate</button>
+                    <script type="text/javascript">
+                        var captcha_input = document.getElementById("captcha-submit");
+                        var captcha_submit_btn = document.getElementById("captcha-submit-btn");
+                        var captcha_change_btn = document.getElementById("captcha-change-btn");
+
+                        captcha_submit_btn.addEventListener('click', () => {
+                            if (captcha_passed)
+                                return;
+                            if(isEmpty(captcha_input.value))
+                                return;
+                            if (captcha_input.value == captcha_solution)
+                            {
+                                captcha_passed = true;
+                                captcha_submit_btn.style.backgroundColor = "lightgreen";
+                                captcha_input.style.backgroundColor = "lightgreen";
+                                captcha_change_btn.style.backgroundColor = "lightgreen";
+                                captcha_input.disabled = true;
+                                console.log("PASSED");
+                                toastr["success"]("Captcha passed!", "You can try to login now!");
+                                login_btn.disabled = false;
+                                login_btn.style.backgroundColor = "lightblue";
+                            }
+                            else{
+                                console.log("ERR :" + captcha_input.value + "/" + captcha_solution)
+                                toastr["error"]("You can generate new captcha!", "Your answer is wrong")
+
+                            }
+
+                        });
+
+                        captcha_change_btn.addEventListener('click', () => {
+                            if (captcha_passed)
+                                return;
+                            captcha_math_mode ^= 1;
+                            if (captcha_math_mode){
+                                createImageFromString(getMathCaptchaData());
+                            }
+                            else{
+                                createImageFromString(getTextCaptchaData());
+                            }
+                        })
+                        createImageFromString(getTextCaptchaData());
+                    </script>
+
+                </label>
+            </div>
         </div>
     </section>
 
+    <div>
+        <p>Текущее значение: </p>
+        <p id="task10-items-sum">None</p>
+        <button id="task10-add-new-item">Add new item</button>
+        <script type="text/javascript">
+            var item_sum_p = document.getElementById("task10-items-sum");
+            var add_item_btn = document.getElementById("task10-add-new-item");
+            add_item_btn.addEventListener('click', () => {
+                accumulator.read();
+            });
+
+
+        </script>
+
+    </div>
+    <div id="task10-cards-host">
+         <script type="text/javascript">
+            var t10_cards_host = document.getElementById("task10-cards-host");
+         </script>
+
+
+    </div>
+
+    <script type="text/javascript">main();</script>
 </body>
 </html>

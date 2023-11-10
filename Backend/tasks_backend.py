@@ -54,4 +54,4 @@ def tasks_10_html():
 @blueprint.route("/css/tasks_3.css")
 def tasks_10_css():
     print("NOT INCLUDE TO FINAL SITE !!!")
-    return flask.send_file("./Frontend/css/tasks_3.css")
+    return flask.send_file("./Frontend/css/task_3.css")

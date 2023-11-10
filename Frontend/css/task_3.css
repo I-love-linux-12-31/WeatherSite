@@ -1,4 +1,45 @@
-.capcha-container {
-    border: 3px royalblue solid;
+.captcha-container {
+    margin: 16px;
+    /*background: #7952b3;*/
     border-radius: 16px;
+}
+
+.captcha-container input {
+    margin-left: 32px;
+    margin-top: 16px;
+}
+
+#captcha {
+    margin-left: 32px;
+}
+
+#captcha-container {
+    border: 3px royalblue solid;
+/*    border: 3px red solid;*/
+}
+
+#login {
+    display: block;
+}
+#password {
+    display: block;
+}
+
+#login-btn {
+    margin-left: 32px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    display: block;
+/*    disabled: true;*/
+}
+
+.t10-card {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 4px lightseagreen solid;
+    background: #32555b;
+}
+.t10-card p {
+    margin: 10px;
+    font-family: "Open Sans", sans-serif;
 }
