@@ -133,30 +133,139 @@ function isEmpty(obj) {
 function truncate(str, maxlength) {
   return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
 }
+
+class Item{
+  constructor(ac) {
+    this.ac = ac;
+    this.count = 1
+    this.price_val = 0;
+    this.div = document.createElement("div");
+    this.div.classList.add("t10-card");
+    this.name = document.createElement("p");
+    this.name.innerHTML = "NAME";
+    this.name.style.display = "inline-block";
+    this.price = document.createElement("p");
+    this.price.style.display = "inline-block";
+    this.price.innerHTML = "0";
+    this.count_block = document.createElement("p");
+    this.count_block.style.display = "inline-block";
+    this.count_block.innerHTML = "X 1";
+
+
+    this.rmBtn = document.createElement("button");
+    this.rmBtn.textContent = "Delete";
+
+    this.plusBtn = document.createElement("button");
+    this.minusBtn = document.createElement("button");
+    this.plusBtn.textContent = "+";
+    this.minusBtn.textContent = "-";
+
+
+    this.div.appendChild(this.name);
+    this.div.appendChild(this.price);
+    this.div.appendChild(this.count_block);
+    this.div.appendChild(this.rmBtn);
+    this.div.appendChild(this.plusBtn);
+    this.div.appendChild(this.minusBtn);
+
+    t10_cards_host.appendChild(this.div)
+
+    this.read();
+
+    item_sum_p.innerText = this.ac.value;
+  }
+
+  read(){
+    let price = parseInt(prompt("Введите число"));
+    this.price_val = price;
+    this.ac.value += price;
+    //item_sum_p.innerText = this.value;
+
+    let text = prompt("Введите текст");
+
+    this.name.innerHTML = truncate(text, 16);
+    this.price.innerHTML = "price: " + price.toString();
+
+    this.rmBtn.addEventListener('click', () => {
+      this.ac.value -= this.price_val * this.count;
+      this.del();
+      item_sum_p.innerText = this.ac.value;
+    })
+    this.plusBtn.addEventListener('click', () => {
+      this.plus();
+    });
+    this.minusBtn.addEventListener('click', () => {
+      this.minus();
+    });
+  }
+
+
+  del(){
+    t10_cards_host.removeChild(this.div);
+    /// this.ac.value -= parseInt(this.price.innerHTML);
+    console.log("RM: " + this.name.innerHTML)
+  }
+
+  plus(){
+    this.count += 1;
+    this.ac.value += this.price_val;
+    this.count_block.innerHTML = "X " + this.count.toString();
+
+    item_sum_p.innerText = this.ac.value;
+  }
+  minus(){
+    this.count -= 1;
+    this.ac.value -= this.price_val;
+    if (isNaN(this.ac.value))
+      this.ac.value = 0;
+
+    if (this.count < 1)
+      this.del();
+    this.count_block.innerHTML = "X " + this.count.toString();
+
+    item_sum_p.innerText = this.ac.value;
+  }
+}
+
 class Accumulator{
   constructor(startingValue){
     this.value = startingValue;
+
+
   }
   read(){
-    let price = parseInt(prompt("Введите число"));
-    this.value += price;
-    item_sum_p.innerText = this.value;
-
-    let text = prompt("Введите текст");
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("t10-card");
-    let newP = document.createElement("p");
-    newP.innerHTML = truncate(text, 16) + " | " + price.toString();
-    newDiv.appendChild(newP);
-    t10_cards_host.appendChild(newDiv);
-
+    new Item(this);
   }
+
 }
 
 var items_list = [];
 
+
+function my_filter(_arr, a, b){
+  let res = [];
+  for (let i = 0; i < _arr.length; i++){
+    if ((_arr[i] >= a) && (_arr[i] <= b))
+      res.push(_arr[i]);
+  }
+  return res;
+}
+
 function main() {
-  accumulator = new Accumulator(parseInt(prompt("Введите стартовое число")));
+  // accumulator = new Accumulator(parseInt(prompt("Введите стартовое число")));
+  accumulator = new Accumulator(0);
   item_sum_p.innerText = accumulator.value;
+
+/*  let arr = [1, 3, 7, 9, 3 , 5, 7]
+  let a = parseInt(prompt("Массив: " + arr.toString() + ". Введите a"))
+  let b = parseInt(prompt("Массив: " + arr.toString() + ". Введите b"))
+  let arr_2 = my_filter(arr, a, b);
+  console.log(arr_2.length)
+  alert("Фильтрованный массив: " + arr_2.toString())
+  arr_2.sort()
+  alert("Фильтрованный и отсортированный массив: " + arr_2.toString())*/
+
+
+
 
 }

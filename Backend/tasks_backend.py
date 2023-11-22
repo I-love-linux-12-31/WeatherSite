@@ -45,6 +45,11 @@ def tasks_10_js():
     return flask.send_file("./Frontend/js/pr10.js")
 
 
+@blueprint.route("/js/task_12.js")
+def tasks_12_js():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/js/pr12.js")
+
 @blueprint.route("/tasks/tasks_3.html")
 def tasks_10_html():
     print("NOT INCLUDE TO FINAL SITE !!!")

@@ -30,7 +30,7 @@
     <script type="text/javascript" src="/js/themes.js"></script>
     <!--<script type="text/javascript" src="/js/task_9.js"></script>-->
     <script type="text/javascript" src="/js/task_10.js"></script>
-
+    <script type="text/javascript" src="/js/task_12.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -167,9 +167,40 @@
             var t10_cards_host = document.getElementById("task10-cards-host");
          </script>
 
-
     </div>
 
     <script type="text/javascript">main();</script>
+
+    <section>
+        <button style="height: 32px; width: 32px; border-radius: 16px; background-color: red" id="t12-notification-btn">
+            <p id="t12-notification-counter-p"></p>
+            <script type="text/javascript">
+                var t12_notification_counter_p = document.getElementById("t12-notification-counter-p");
+            </script>
+        </button>
+        <script type="text/javascript">
+                var t12_notification_btn = document.getElementById("t12-notification-btn");
+                t12_notification_btn.addEventListener('click', () => {
+                stop_spam();
+            });
+            </script>
+        <div class="t10-card" id="t12-notifications-host">
+            <script type="text/javascript">
+                var t12_notifications_host = document.getElementById("t12-notifications-host");
+
+init_notification_spam();
+/*send_notification();
+send_notification();
+send_notification();*/
+
+            </script>
+
+        </div>
+
+
+    </section>
+
+
+
 </body>
 </html>
