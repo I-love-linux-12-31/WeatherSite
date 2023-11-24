@@ -170,7 +170,15 @@
     </div>
 
     <script type="text/javascript">main();</script>
-
+    <div style="margin: 32px;">
+        <button id="t12-send-notification-btn">Send notification</button>
+        <script type="text/javascript">
+                var t12_send_notification_btn = document.getElementById("t12-send-notification-btn");
+                t12_send_notification_btn.addEventListener('click', () => {
+                    sendNotification(prompt("Notification text: "));
+                });
+        </script>
+    </div>
     <section>
         <button style="height: 32px; width: 32px; border-radius: 16px; background-color: red" id="t12-notification-btn">
             <p id="t12-notification-counter-p"></p>
@@ -188,10 +196,10 @@
             <script type="text/javascript">
                 var t12_notifications_host = document.getElementById("t12-notifications-host");
 
-init_notification_spam();
-/*send_notification();
-send_notification();
-send_notification();*/
+                init_notification_spam();
+                /*send_notification();
+                send_notification();
+                send_notification();*/
 
             </script>
 
@@ -200,7 +208,12 @@ send_notification();*/
 
     </section>
 
+    <section id="notification-section">
 
+    </section>
+    <script type="text/javascript">
+            var t12_notifications_section = document.getElementById("notification-section");
+    </script>
 
 </body>
 </html>

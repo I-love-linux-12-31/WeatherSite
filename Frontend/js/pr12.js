@@ -26,3 +26,13 @@ function stop_spam() {
   }, 10000);
 }
 
+
+function sendNotification(text){
+    let div = document.createElement("div");
+    let item = document.createElement("p");
+    div.appendChild(item)
+    div.classList.add("t12-notification")
+    item.innerHTML = text;
+    t12_notifications_section.appendChild(div);
+    setTimeout(() => {t12_notifications_section.removeChild(div);}, 5000);
+}

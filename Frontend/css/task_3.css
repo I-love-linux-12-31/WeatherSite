@@ -43,3 +43,29 @@
     margin: 10px;
     font-family: "Open Sans", sans-serif;
 }
+
+
+
+#notification-section {
+    position: fixed;
+    height: 18em;
+    min-height: 256px;
+    width: 16em;
+    background-color: rgba(121, 82, 179, 0.64);
+    top: 4em;
+    right: 4em;
+    border-radius: 3em;
+}
+
+
+.t12-notification{
+    margin-bottom: 16px;
+    border-radius: 16px;
+    border: 4px #02c4ff dotted;
+    background: #336e7977;
+}
+
+.t12-notification p{
+    margin: 12px;
+    font-family: "Open Sans", sans-serif;
+}
