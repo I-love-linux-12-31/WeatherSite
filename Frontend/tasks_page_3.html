@@ -172,13 +172,43 @@
     <script type="text/javascript">main();</script>
     <div style="margin: 32px;">
         <button id="t12-send-notification-btn">Send notification</button>
+        <button id="t12-list-creation-btn">Add item to list</button>
         <script type="text/javascript">
                 var t12_send_notification_btn = document.getElementById("t12-send-notification-btn");
+                var t12_list_creation_btn = document.getElementById("t12-list-creation-btn");
+                var t12_list_can_add = true;
                 t12_send_notification_btn.addEventListener('click', () => {
                     sendNotification(prompt("Notification text: "));
                 });
+                function add_item_to_t12_list(){
+                    if (t12_list_can_add)
+                    {
+                        let item = document.createElement("li");
+                        let a = prompt("new list item text: ");
+                        item.innerHTML = a;
+                        if (a == null) {
+                            t12_list_can_add = false;
+                            return;
+                        }
+                        t12_list.appendChild(item);
+                        setTimeout(add_item_to_t12_list, 500);
+                    }
+
+                }
+                t12_list_creation_btn.addEventListener('click', add_item_to_t12_list)
+        </script>
+        <ul id="t12-list">
+
+        </ul>
+        <script type="text/javascript">
+            var t12_list = document.getElementById("t12-list");
         </script>
     </div>
+
+
+
+
+
     <section>
         <button style="height: 32px; width: 32px; border-radius: 16px; background-color: red" id="t12-notification-btn">
             <p id="t12-notification-counter-p"></p>
@@ -208,8 +238,9 @@
 
     </section>
 
-    <section id="notification-section">
 
+
+    <section id="notification-section">
     </section>
     <script type="text/javascript">
             var t12_notifications_section = document.getElementById("notification-section");
