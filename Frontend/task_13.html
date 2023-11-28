@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 13</title>
+
+    <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
+
+    <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
+    <link rel="stylesheet" href="/css/dark-theme/style.css" class="dark-theme-importer">
+
+    <link rel="stylesheet" href="/css/style.css" class="dark-theme-importer"> <!-- -->
+
+
+
+
+    <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
+    <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
+    <link rel="stylesheet" href="/css/tasks_2.css"> <!-- -->
+    <link rel="stylesheet" href="/css/tasks_3.css"> <!-- -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+<!--    <script type="text/javascript" src="/js/main.js"></script>-->
+    <script type="text/javascript" src="/js/themes.js"></script>
+    <!--<script type="text/javascript" src="/js/task_9.js"></script>-->
+    <script type="text/javascript" src="/js/task_13.js"></script>
+    <script type="text/javascript" src="/js/task_12.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+
+<div style="width: 64px; height: 64px; background-color: blue; opacity: 0.4; position: fixed; z-index: -4; left: 32px; top: 32px"></div>
+<div style="width: 64px; height: 64px; background-color: red; opacity: 0.4; position: fixed; z-index: -3; left: 64px; top: 48px"></div>
+<div style="width: 64px; height: 64px; background-color: green; opacity: 0.4; position: fixed; z-index: -2; left: 96px; top: 64px"></div>
+<div style="width: 64px; height: 64px; background-color: yellow; opacity: 0.4; position: fixed; z-index: -1; left: 128px; top: 98px"></div>
+
+
+<div style="margin: 32px;">
+        <button id="t12-send-notification-btn">Send notification</button>
+<!--        <button id="t12-list-creation-btn">Add item to list</button>-->
+        <script type="text/javascript">
+                var t12_send_notification_btn = document.getElementById("t12-send-notification-btn");
+                var t12_list_creation_btn = document.getElementById("t12-list-creation-btn");
+                var t12_list_can_add = true;
+                t12_send_notification_btn.addEventListener('click', () => {
+                    sendNotification(prompt("Notification text: "));
+                });
+
+        </script>
+    </div>
+    <section id="notification-section">
+    </section>
+    <script type="text/javascript">
+            var t12_notifications_section = document.getElementById("notification-section");
+    </script>
+
+    <div style="background-color: #32555b; border: 4px royalblue dotted; min-height: 16em;" id="t13-img-container">
+        <img src="/tux.png" alt="Image with tux" style="width: 5em; height: 5em;" id="t13-img">
+        <script type="text/javascript">
+            var t13_img = document.getElementById("t13-img");
+            var t13_ing_container = document.getElementById("t13-img-container");
+            t13_img.style.marginLeft = ((t13_ing_container.offsetWidth - t13_img.offsetWidth) / 2).toString() + "px";
+            t13_img.style.marginTop = ((t13_ing_container.offsetHeight - t13_img.offsetHeight) / 2).toString() + "px";
+/*            t13_img.style.position = "absolute";*/
+            window.addEventListener("resize", () => {
+                t13_img.style.marginLeft = ((t13_ing_container.offsetWidth - t13_img.offsetWidth) / 2).toString() + "px";
+                t13_img.style.marginTop = ((t13_ing_container.offsetHeight - t13_img.offsetHeight) / 2).toString() + "px";
+                // console.log((t13_ing_container.offsetWidth - t13_img.offsetWidth) / 2)
+            })
+        </script>
+    </div>
+
+    <section id="articles-section">
+
+
+    </section>
+    <script type="text/javascript">
+        var articles_section = document.getElementById("articles-section");
+
+        get_new_post();
+        get_new_post();
+        get_new_post();
+        get_new_post();
+        get_new_post();
+        get_new_post();
+        get_new_post();
+
+        var bg_blocks = []
+
+        window.addEventListener("mousemove", () => {
+            let difference = window.performance.now() - bg_blocks_last_resize;
+            bg_blocks_last_resize = window.performance.now();
+            if (difference > 90) {
+                for (let i = 0; i < bg_blocks.length; i++) {
+                    randsize(bg_blocks[i]);
+                    randmove(bg_blocks[i], 0.5);
+                }
+            }
+        })
+
+        window.addEventListener("scroll", () => {
+            let difference = window.performance.now() - bg_blocks_last_move;
+            bg_blocks_last_move = window.performance.now();
+            if (difference > 80) {
+                for (let i = 0; i < bg_blocks.length; i++)
+                    randmove(bg_blocks[i]);
+            }
+            if (window.scrollY + window.innerHeight > document.body.offsetHeight * 0.8)
+            {
+                get_new_post();
+                get_new_post();
+                get_new_post();
+
+
+            }
+            //console.log(window.scrollY + window.innerHeight, document.body.offsetHeight)
+        })
+
+
+        for (let i = 0; i < 64; i++)
+            bg_blocks.push(create_bg_block());
+
+    </script>
+</body>
+</html>

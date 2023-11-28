@@ -45,10 +45,17 @@ def tasks_10_js():
     return flask.send_file("./Frontend/js/pr10.js")
 
 
+@blueprint.route("/js/task_13.js")
+def tasks_13_js():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/js/pr13.js")
+
+
 @blueprint.route("/js/task_12.js")
 def tasks_12_js():
     print("NOT INCLUDE TO FINAL SITE !!!")
     return flask.send_file("./Frontend/js/pr12.js")
+
 
 @blueprint.route("/tasks/tasks_3.html")
 def tasks_10_html():
@@ -56,7 +63,18 @@ def tasks_10_html():
     return flask.send_file("./Frontend/tasks_page_3.html")
 
 
+@blueprint.route("/tasks/task_13.html")
+def task_13_html():
+    print("NOT INCLUDE TO FINAL SITE !!!")
+    return flask.send_file("./Frontend/task_13.html")
+
+
 @blueprint.route("/css/tasks_3.css")
 def tasks_10_css():
     print("NOT INCLUDE TO FINAL SITE !!!")
     return flask.send_file("./Frontend/css/task_3.css")
+
+
+@blueprint.route("/tux.png")
+def tux():
+    return flask.send_file("./Frontend/3rdParty/tux.png")

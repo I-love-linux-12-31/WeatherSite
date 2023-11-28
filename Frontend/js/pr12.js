@@ -29,10 +29,22 @@ function stop_spam() {
 
 function sendNotification(text){
     let div = document.createElement("div");
+    let btn = document.createElement("button");
     let item = document.createElement("p");
     div.appendChild(item)
-    div.classList.add("t12-notification")
+    div.appendChild(btn)
+    div.classList.add("t12-notification");
     item.innerHTML = text;
+    item.style.display = "inline-block"
+    btn.innerHTML = "X";
+    btn.style.backgroundColor = "rgba(239,40,5,0.89)";
     t12_notifications_section.appendChild(div);
-    setTimeout(() => {t12_notifications_section.removeChild(div);}, 5000);
+
+    function handler(){
+        t12_notifications_section.removeChild(div);
+        clearTimeout(timeout);
+    }
+
+    let timeout = setTimeout(handler, 5000);
+    btn.addEventListener('click', handler)
 }
