@@ -48,7 +48,7 @@ function create_bg_block(){
     div.style.backgroundColor = colors_for_background_blocks[Math.floor(Math.random() * 177) % colors_for_background_blocks.length];
     div.style.width = (Math.floor(Math.random() * 177) % 7 + 1).toString() + "em";
     div.style.height = div.style.width;
-    div.style.zIndex = (1 * (Math.floor(Math.random() * 17) % 13 + 1)).toString();
+    div.style.zIndex = (-1 * (Math.floor(Math.random() * 17) % 13 + 1)).toString();
     div.style.position = "fixed";
     div.style.left = (Math.floor(Math.random() * 17754)  % (window.innerWidth * 0.98)).toString() + "px";
     div.style.top = (Math.floor(Math.random() * 17357)  % (window.innerWidth * 0.98)).toString() + "px";

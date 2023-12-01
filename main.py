@@ -46,6 +46,7 @@ def style():
 def burger_menu():
     return flask.send_file("Frontend/css/burger-menu.css")
 
+
 @app.route("/3rdParty/logo_white_cropped.png")
 def open_weather_logo_demo():
     return flask.send_file("Frontend/3rdParty/logo_white_cropped.png")
@@ -95,9 +96,10 @@ def main_js():
 def themes_js():
     return flask.send_file("Frontend/js/themes.js")
 
+
 @app.errorhandler(404)
 def page_not_found(error):
-   return flask.send_file("Frontend/404.html"), 404
+    return flask.send_file("Frontend/404.html"), 404
 
 
 if __name__ == '__main__':
