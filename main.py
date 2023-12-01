@@ -100,5 +100,20 @@ def page_not_found(error):
    return flask.send_file("Frontend/404.html"), 404
 
 
+@app.route("/12_days_forecast")
+def forecast_on_12_days():
+    return flask.send_file("Frontend/12_days_forecast.html")
+
+
+@app.route("/js/12_days_forecast.js")
+def forecast_on_12_days_js():
+    return flask.send_file("Frontend/js/12_days_forecast.js")
+
+
+@app.route("/js/global_backend_config.js")
+def global_backend_config_js():
+    return flask.send_file("Frontend/js/global_backend_config.js")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")

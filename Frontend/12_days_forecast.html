@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather forecast</title>
+    <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
+
+    <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
+    <link rel="stylesheet" href="/css/dark-theme/style.css" class="dark-theme-importer">
+
+    <link rel="stylesheet" href="/css/style.css" class="dark-theme-importer"> <!-- -->
+
+    <link rel="stylesheet" href="/css/burger-menu.css">
+    <!--  -->
+
+    <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
+    <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/themes.js"></script>
+    <script type="text/javascript" src="/js/global_backend_config.js"></script>
+    <script type="text/javascript" src="/js/12_days_forecast.js"></script>
+</head>
+<body>
+
+<header class="navbar"> <!-- Панель навигации -->
+
+    <img rel="svg+xml" src="/favicon.svg" alt="*Logo*" height="64px">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-btn" for="menu-toggle">
+        <span></span>
+        <img rel="svg+xml" src="/menu_icon.svg" alt="*Menu*" height="64px">
+    </label>
+
+
+    <script type="text/javascript">
+		document.getElementById("menu-toggle").addEventListener('change', () => {
+		  console.log("Menu - button pressed");
+		})
+    </script>
+
+    <nav id="nav-header-left">
+        <ul class="nav_items">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">To home page</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/monthly/">monthly</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/tasks/main.html">Tasks page</a>
+            </li>
+        </ul>
+    </nav>
+        <div class="navbar-right">
+            <!--<p class="nav-item-r">
+                    <a class="nav-link active" aria-current="page" href="/">___</a>
+            </p>-->
+            <p class="nav-item-r">
+                <label for="users-city-input" class="nav-link">
+                    <input class="nav-link-input" type="text" id="users-city-input" name="users-city" placeholder="Your location">
+                    <script type="text/javascript">
+                        let location_input = document.getElementById("users-city-input");
+/*                        location_input.setAttribute("value", "#####");
+                        location_input.value = 'Hello, world!';*/
+                    </script>
+                </label>
+            </p>
+
+
+            <label class="language-switch"> <!-- Theme switch -->
+                <input type="checkbox" id="theme-select-checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🌒</p>
+                <p class="language-switch-on">🌞</p>
+                <script type="text/javascript">
+
+		document.getElementById("theme-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+          change_theme();
+		})
+                </script>
+            </label>
+
+
+            <label class="language-switch">
+                <input type="checkbox" id="lang-select-checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🇺🇸</p>
+                <p class="language-switch-on">🇷🇺</p>
+                <script type="text/javascript">
+
+		document.getElementById("lang-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+		})
+                </script>
+            </label>
+
+        </div>
+
+</header>
+<br>
+
+<main>
+<!--<article>Main content</article>-->
+<section class="content-wrap">
+<div id="_7days-weather-box"> <!-- Блок на погодные данные на 7 дней -->
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+
+</div>
+
+
+
+</section>
+
+</main>
+
+<!--************************************************-->
+<!--************************************************-->
+
+
+
+<!--************************************************-->
+<footer id="footer"> <!-- Подвал страницы -->
+    <div class="footer-table">
+<!--        <td>-->
+<!--            <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png" class="footer-card">-->
+<!--        </td>-->
+
+    <div class="footer-card">
+        <!-- openweather original logo https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png -->
+        <a class="footer-link" href="/404">On <img height="32px" src="3rdParty/logo_white_cropped.png" rel="png"> data.</a>
+    </div>
+
+    <address class="footer-card">
+        <pre class="footer-contacts">
+Administrator contacts:
+Email: <a class="footer-contacts" href="mailto:yaroslav.12.31.dev@gmail.com">yaroslav.12.31.dev@gmail.com</a>
+        </pre>
+    </address>
+
+    </div>
+
+
+
+
+</footer>
+
+</body>
+</html>
