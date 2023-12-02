@@ -83,3 +83,32 @@
     padding: 16px;
 
 }
+
+.weather-card-big-horizontal {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+    background-color: rgba(24, 78, 101, 0.6);
+    border-radius: 15px;
+    text-decoration: none;
+    opacity: 0.8;
+    padding-right: 16px;
+    /*padding-top: 8px;*/
+    margin: 16px 8px 8px;
+
+    color: azure;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.weather-card-big-horizontal img {
+    display: inline-block;
+}
+.weather-card-big-horizontal p {
+    display: block;
+}

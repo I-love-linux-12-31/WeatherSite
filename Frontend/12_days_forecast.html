@@ -111,53 +111,70 @@
 <br>
 
 <main>
-<!--<article>Main content</article>-->
-<section class="content-wrap">
-<div id="_7days-weather-box"> <!-- Блок на погодные данные на 7 дней -->
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
-    </div>
-    <div class="weather-card-big weather-card-big-week">
-        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-        <p>*Dayname*</p>
-        <p>-</p>
-        <p>-</p>
+    <div class="loader-host" id="loader-host">
+        <div class="weather-card-big weather-card-big-week" style="display: flex;align-items: center; justify-items: center" id="loader-indicator">
+            <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+            <p>Searching forecast fore you...</p>
+            <br style="margin-right: 16px;">
+            <div class="loader-indicator"></div>
+        </div>
+        <script type="text/javascript">
+            var loader_indicator = document.getElementById("loader-indicator");
+        </script>
     </div>
 
+
+
+
+<section class="content-wrap">
+<div id="forecast-12-days-cards-host"> <!-- Блок на погодные данные на 7 дней -->
+    <!--<div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>
+    <div class="weather-card-big weather-card-big-week">
+        <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+        <p>*Dayname*</p>
+        <p>-</p>
+        <p>-</p>
+    </div>-->
+
 </div>
+    <script type="text/javascript">
+        var forecast_12_days_met_no_cards_host = document.getElementById("forecast-12-days-cards-host");
+    </script>
 
 
 
@@ -165,12 +182,6 @@
 
 </main>
 
-<!--************************************************-->
-<!--************************************************-->
-
-
-
-<!--************************************************-->
 <footer id="footer"> <!-- Подвал страницы -->
     <div class="footer-table">
 <!--        <td>-->

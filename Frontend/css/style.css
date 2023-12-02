@@ -130,3 +130,51 @@
 .text-404 {
     text-decoration: none;
 }
+
+
+.loader-indicator {
+    border: 12px dotted #f3f3f3; /* Light grey */
+    /*border-top: 16px dashed #3498db; !* Blue *!*/
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: loader-indicator-spin 3s linear infinite;
+}
+.loader-host {
+    display: flex;
+    position: relative;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    list-style: none;
+    padding: 8px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+@keyframes loader-indicator-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.forecast-12-days-cards-block {
+    display: flex;
+    position: relative;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    list-style: none;
+    padding: 8px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}

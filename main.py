@@ -103,6 +103,7 @@ def page_not_found(error):
 
 
 @app.route("/12_days_forecast")
+@app.route("/12_days_forecast.html")
 def forecast_on_12_days():
     return flask.send_file("Frontend/12_days_forecast.html")
 
