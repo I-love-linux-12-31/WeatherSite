@@ -1,7 +1,15 @@
-var today_forecast_met_no_12 = null;
-var other_days_forecast_met_no_12 = null;
+var forecast_met_no_10 = null;
 var met_no_12_ready = false;
+var met_no_10_loaded_timestamps = new Set()
 
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 
 function getMonthName(monthNumber) {
@@ -38,7 +46,7 @@ function formatTime(userTime){
 
 
 function get_12_days_forecast(location, lat, lon) {
-  const apiUrl = `http://yk-hosted-12-31.ydns.eu:9381/v1.0/met_no_12` + `?location=${encodeURIComponent(location)}&lat=${lat}&lon=${lon}`;
+  const apiUrl = `http://yk-hosted-12-31.ydns.eu:9381/v2.0/met_no_10` + `?location=${encodeURIComponent(location)}&lat=${lat}&lon=${lon}`;
 
   const xhr = new XMLHttpRequest();
 
@@ -51,8 +59,9 @@ function get_12_days_forecast(location, lat, lon) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       // Parse the JSON data
       const response = JSON.parse(xhr.responseText);
-      today_forecast_met_no_12 = response["today"];
-      other_days_forecast_met_no_12 = response["other_days"];
+      forecast_met_no_10 = response["data"];
+      // today_forecast_met_no_12 = response["today"];
+      // other_days_forecast_met_no_12 = response["other_days"];
       setTimeout(apply_12_days_forecast, 0.1);
       loader_indicator.parentNode.removeChild(loader_indicator);
       alert("OK")
@@ -71,22 +80,22 @@ function get_12_days_forecast(location, lat, lon) {
 
 function apply_12_days_forecast(){
   // alert(today_forecast_met_no_12[0] + " \n" + POSIXtoUserTime(today_forecast_met_no_12[0]))
-    let host = document.createElement("div");
-    host.classList.add("forecast-12-days-cards-block")
-    forecast_12_days_met_no_cards_host.appendChild(host);
+  //   let host = document.createElement("div");
+  //   host.classList.add("forecast-12-days-cards-block")
+  //   forecast_12_days_met_no_cards_host.appendChild(host);
 
     // sort
-    for (let j = 0; j < today_forecast_met_no_12[1].length; j++)
+    for (let j = 0; j < forecast_met_no_10.length; j++)
     {
-        for (let i = 0; i < today_forecast_met_no_12[1].length - 1; i++){
-            if (today_forecast_met_no_12[1][i] > today_forecast_met_no_12[1][i + 1]) {
-                let temp = today_forecast_met_no_12[1][i];
-                today_forecast_met_no_12[1][i] = today_forecast_met_no_12[1][i + 1];
-                today_forecast_met_no_12[1][i + 1] = temp;
+        for (let i = 0; i < forecast_met_no_10.length - 1; i++){
+            if (forecast_met_no_10[i] > forecast_met_no_10[i + 1]) {
+                let temp = forecast_met_no_10[i];
+                forecast_met_no_10[i] = forecast_met_no_10[i + 1];
+                forecast_met_no_10[i + 1] = temp;
             }
         }
     }
-
+    /*
     for (let i = 0; i < today_forecast_met_no_12[1].length; i++)
     {
         let item = today_forecast_met_no_12[1][i];
@@ -134,64 +143,87 @@ function apply_12_days_forecast(){
         //     <p>*Dayname*</p>
 
     }
-
-    for (let i = 0; i < other_days_forecast_met_no_12.length; i++)
-    {
-        add_block_for_12_days_forecast(other_days_forecast_met_no_12[i]);
-    }
-}
-
-function add_block_for_12_days_forecast(block_data){
-  // alert(today_forecast_met_no_12[0] + " \n" + POSIXtoUserTime(today_forecast_met_no_12[0]))
+*/
     let host = document.createElement("div");
     host.classList.add("forecast-12-days-cards-block")
     forecast_12_days_met_no_cards_host.appendChild(host);
+    let last_date = null;
 
-    // sort
-    for (let j = 0; j < block_data[1].length; j++)
+    for (let i = 0; i < forecast_met_no_10.length; i++)
     {
-        for (let i = 0; i < block_data[1].length - 1; i++){
-            if (block_data[1][i] > block_data[1][i + 1]) {
-                let temp = block_data[1][i];
-                block_data[1][i] = block_data[1][i + 1];
-                block_data[1][i + 1] = temp;
-            }
+        if (last_date != null && (last_date.getDate() !== POSIXtoUserTime(forecast_met_no_10[i][0]).getDate()))
+        {
+            // alert(last_date.getDate() + " != " + POSIXtoUserTime(other_days_forecast_met_no_12[i][0]).getDate())
+            host = document.createElement("div");
+            host.classList.add("forecast-12-days-cards-block")
+            forecast_12_days_met_no_cards_host.appendChild(host);
+
+            console.log("===>>> New block")
         }
+        // console.log(forecast_met_no_10[i])
+        add_block_for_12_days_forecast(forecast_met_no_10[i], host);
+        console.log("+ " + formatTime(POSIXtoUserTime(forecast_met_no_10[i][0])))
+        last_date = POSIXtoUserTime(forecast_met_no_10[i][0]);
     }
+}
 
-    for (let i = 0; i < block_data[1].length; i++)
+function add_block_for_12_days_forecast(block_data, host){
+    // for (let j = 0; j < block_data[1].length; j++)
+    // {
+    //     for (let i = 0; i < block_data[1].length - 1; i++){
+    //         if (block_data[1][i] > block_data[1][i + 1]) {
+    //             let temp = block_data[1][i];
+    //             block_data[1][i] = block_data[1][i + 1];
+    //             block_data[1][i + 1] = temp;
+    //         }
+    //     }
+    // }
+    // let rc = getRandomColor();
+    // for (let i = 0; i < block_data[1].length; i++)
+    // {
+    let item = block_data;
+    // 0 - unix times
+    // 1 - img_name
+    // 2 - temperature
+    // 3 - wind
+    if (met_no_10_loaded_timestamps.has(formatTime(POSIXtoUserTime(item[0])))) {
+        // alert("SIM");
+        return;
+    }
+    met_no_10_loaded_timestamps.add(formatTime(POSIXtoUserTime(item[0])))
+
+    let div = document.createElement("div");
+    div.classList.add("weather-card-big-horizontal");
+    div.classList.add("weather-card-big-week");
+    if (POSIXtoUserTime(item[0]).getDate() === (new Date()).getDate())
     {
-        let item = block_data[1][i];
-        // 0 - unix times
-        // 1 - img_name
-        // 2 - temperature
-        // 3 - wind
-
-        let div = document.createElement("div");
-        div.classList.add("weather-card-big-horizontal");
-        div.classList.add("weather-card-big-week");
-        let img = document.createElement("img");
-        img.classList.add("weather-card-big-image");
-        img.src = "/3rdParty/FreeIcons/weather-none-available.svg"
-        img.alt = "*Image*"
-        div.appendChild(img);
-
-        let text_1 = document.createElement("p");
-        text_1.innerText = item[2] + " ℃ \n" + item[3] + " m/s";
-
-        let header = document.createElement("p");
-
-        header.style.display = "flex";
-        header.style.textAlign = "start";
-        header.innerText = formatTime(POSIXtoUserTime(item[0]));
-        header.style.marginRight = "8px";
-        div.appendChild(header)
-
-        div.appendChild(text_1);
-
-        host.appendChild(div);
-
+       div.style.backgroundColor = "rgba(5,114,148,0.74)";
     }
+    // div.style.backgroundColor = rc;
+    let img = document.createElement("img");
+    img.classList.add("weather-card-big-image");
+    img.src = "/3rdParty/FreeIcons/weather-none-available.svg"
+    img.alt = "*Image*"
+    div.appendChild(img);
+
+    let text_1 = document.createElement("p");
+    text_1.innerText = item[2] + " ℃ \n" + item[3] + " m/s";
+
+    let header = document.createElement("p");
+
+    header.style.display = "flex";
+    header.style.textAlign = "start";
+    header.innerText = formatTime(POSIXtoUserTime(item[0]));
+    // console.log("* " + header.innerText )
+    header.style.marginRight = "8px";
+    div.appendChild(header)
+
+    div.appendChild(text_1);
+
+    host.appendChild(div);
+
+    // }
+    // host.appendChild(document.createElement("br"));
 }
 
 setTimeout(() => {get_12_days_forecast("Moscow", 55.683943, 37.551963)}, 0.6)
