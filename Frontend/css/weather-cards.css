@@ -88,6 +88,13 @@
     padding: 16px;
 
 }
+.weather-card-big p {
+    transition: font-size .3s ease;
+}
+.weather-card-big:hover p {
+    font-size: 26px;
+}
+
 
 .weather-card-big-horizontal {
     position: relative;
@@ -114,4 +121,16 @@
 }
 .weather-card-big-horizontal p {
     display: block;
+}
+
+.weather-card-big-horizontal p {
+    transition: font-size .3s ease;
+}
+
+.weather-card-big-horizontal {
+    transition: padding .5s ease, border .3s ease;
+}
+
+.weather-card-big-horizontal:hover p {
+    font-size: 26px;
 }
