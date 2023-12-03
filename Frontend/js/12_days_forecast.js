@@ -2,6 +2,7 @@ var forecast_met_no_10 = null;
 var met_no_12_ready = false;
 var met_no_10_loaded_timestamps = new Set()
 
+
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
@@ -62,9 +63,13 @@ function get_12_days_forecast(location, lat, lon) {
       forecast_met_no_10 = response["data"];
       // today_forecast_met_no_12 = response["today"];
       // other_days_forecast_met_no_12 = response["other_days"];
-      setTimeout(apply_12_days_forecast, 0.1);
-      loader_indicator.parentNode.removeChild(loader_indicator);
-      alert("OK")
+        if (! no_apply_forecast)
+            setTimeout(apply_12_days_forecast, 0.1);
+        try {
+            loader_indicator.parentNode.removeChild(loader_indicator);
+        }
+        catch (e){}
+      // alert("OK")
 
     }
     else {
@@ -228,6 +233,3 @@ function add_block_for_12_days_forecast(block_data, host){
 
 
 
-var getForecastFunction = (location, lat, lon) => {
-    setTimeout(() => {get_12_days_forecast(location, lat, lon)}, 0.3)
-}

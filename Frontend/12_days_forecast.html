@@ -29,6 +29,9 @@
     <script type="text/javascript" src="/js/12_days_forecast.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    var no_apply_forecast = false;
+</script>
 
 <header class="navbar"> <!-- Панель навигации -->
 
@@ -206,6 +209,12 @@ Email: <a class="footer-contacts" href="mailto:yaroslav.12.31.dev@gmail.com">yar
 
 
 </footer>
-
+<script type="text/javascript">
+    var getForecastFunction = (location, lat, lon) => {
+    setTimeout(() => {
+        get_12_days_forecast(location, lat, lon)
+    }, 0.3)
+}
+</script>
 </body>
 </html>

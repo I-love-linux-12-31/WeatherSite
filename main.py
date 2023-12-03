@@ -120,5 +120,10 @@ def global_backend_config_js():
     return flask.send_file("Frontend/js/global_backend_config.js")
 
 
+@app.route("/js/main_page_forecasts.js")
+def main_page_forecasts_js():
+    return flask.send_file("Frontend/js/main_page_forecasts.js")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")
