@@ -5,10 +5,12 @@ from flask import Flask
 import flask
 
 from Backend.tasks_backend import blueprint as tasks_blueprint
+from Backend.weather_icons import blueprint as icons_blueprint
 
 app = Flask(__name__)
 
 app.register_blueprint(tasks_blueprint)
+app.register_blueprint(icons_blueprint)
 
 app.config["SECRET_KEY"] = secrets.token_hex()
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(

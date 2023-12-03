@@ -202,8 +202,8 @@ function add_block_for_12_days_forecast(block_data, host){
     // div.style.backgroundColor = rc;
     let img = document.createElement("img");
     img.classList.add("weather-card-big-image");
-    img.src = "/3rdParty/FreeIcons/weather-none-available.svg"
-    img.alt = "*Image*"
+    img.src = "/icons/met_no_api?weather=" + encodeURIComponent(block_data[1]["symbol_code"]);
+    img.alt = block_data[1]["symbol_code"];
     div.appendChild(img);
 
     let text_1 = document.createElement("p");
