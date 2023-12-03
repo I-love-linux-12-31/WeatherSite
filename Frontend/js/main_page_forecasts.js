@@ -27,6 +27,9 @@ function apply_main_page_forecast(){
     let count = 0;
     let av_temperature = 0;
     let av_wind_speed = 0;
+
+    let stats = new Map()
+    let last_time = null;
     for (let i = 0; i < forecast_met_no_10.length; i++)
     {
         let item = forecast_met_no_10[i];
@@ -73,9 +76,9 @@ function apply_main_page_forecast(){
 
     }
 
-    let h2 = document.createElement("h2");
-    h2.innerText = "today"
-    main_page_today_forecast_average_info_host.appendChild(h2);
+    // let h2 = document.createElement("h2");
+    // h2.innerText = "today"
+    // main_page_today_forecast_average_info_host.appendChild(h2);
 
     let div = document.createElement("div");
     div.classList.add("weather-card-big-horizontal");

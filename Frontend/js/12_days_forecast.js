@@ -161,6 +161,10 @@ function apply_12_days_forecast(){
             // alert(last_date.getDate() + " != " + POSIXtoUserTime(other_days_forecast_met_no_12[i][0]).getDate())
             host = document.createElement("div");
             host.classList.add("forecast-12-days-cards-block")
+            let title = document.createElement("h2");
+            title.innerText = formatTime(POSIXtoUserTime(forecast_met_no_10[i][0])).replace("\n", " ").slice(7)
+            forecast_12_days_met_no_cards_host.appendChild(title)
+
             forecast_12_days_met_no_cards_host.appendChild(host);
 
             console.log("===>>> New block")

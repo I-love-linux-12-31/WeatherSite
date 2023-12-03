@@ -1,9 +1,15 @@
+.weather-card-big {
+    background-color: rgba(24, 78, 101, 0.9);
+}
+
+.weather-card-big-horizontal {
+    background-color: rgba(24, 78, 101, 0.9);
+}
 @media only screen and (min-width: 1191px) {
     /* Desktop and big screen*/
     .weather-card-big {
         display: inline-block;
         align-items: center;
-        background-color: rgba(24, 78, 101, 0.6);
         border-radius: 15px;
         padding: 8px;
         text-decoration: none;
@@ -38,7 +44,6 @@
         position: relative;
         display: block;
         align-items: center;
-        background-color: rgba(24, 78, 101, 0.6);
         border-radius: 15px;
         padding: 8px;
         text-decoration: none;
@@ -92,11 +97,9 @@
     justify-content: center;
     text-align: center;
 
-
-    background-color: rgba(24, 78, 101, 0.6);
     border-radius: 15px;
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.9;
     padding-right: 16px;
     /*padding-top: 8px;*/
     margin: 16px 8px 8px;

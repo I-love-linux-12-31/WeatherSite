@@ -179,18 +179,12 @@
     z-index: 2;
 }
 
-h2 {
-    color: azure;
-    text-align: center;
-    font-size: 26px;
-    font-family: "Open Sans", sans-serif;
-}
 
 #today-forecast-block {
     display: grid;
 }
 
 #main-page-today-forecast-average-info-host {
-    background-color: rgba(238, 156, 115, 0.63);
+    background-color: rgba(246, 161, 2, 0.79);
     border-radius: 16px;
 }

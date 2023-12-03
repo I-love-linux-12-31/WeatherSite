@@ -39,7 +39,10 @@ def get_path_by_met_no_icon_name(name: str) -> str:
             return "Frontend/3rdParty/FreeIcons/weather-clear.svg"
         case "lightsleet":
             return "Frontend/3rdParty/FreeIcons/weather-clear.svg"
-
+        case "rainshowers_day":
+            return "Frontend/3rdParty/FreeIcons/weather-showers.svg"
+        case "heavysleet":
+            return "Frontend/3rdParty/FreeIcons/weather-snow-rain.svg"
 
     print(f"[\033[33mWARN\033[0m] failed to get icon: {name}]")
     return "Frontend/3rdParty/FreeIcons/weather-none-available.svg"
