@@ -226,4 +226,8 @@ function add_block_for_12_days_forecast(block_data, host){
     // host.appendChild(document.createElement("br"));
 }
 
-setTimeout(() => {get_12_days_forecast("Moscow", 55.683943, 37.551963)}, 0.6)
+
+
+var getForecastFunction = (location, lat, lon) => {
+    setTimeout(() => {get_12_days_forecast(location, lat, lon)}, 0.3)
+}

@@ -6,21 +6,36 @@ const successCallback = (position) => {
   // alert('Your position [navigator]: ' + position.coords.latitude + ';' + position.coords.longitude);
   // location_input.setAttribute("value", "" + position.coords.latitude + ';' + position.coords.latitude);
   location_input.value = "" + position.coords.latitude + ';' + position.coords.longitude;
-  // location_input.innerText = "" + position.coords.latitude + ';' + position.coords.latitude;
+  setTimeout(
+  () => {
+    getForecastFunction("", position.coords.latitude, position.coords.longitude);
+  }, 0.1
+)
+
 };
 
 const errorCallback = (error) => {
   console.log(error);
+  getGeoIP();
 };
 
  // Disabled geolocation todo: make gui
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-/*
-var getJSON = function(url, callback) {
+try {
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+}
+catch (e){
+  // navigator not available. MB Tor used.
+
+  setTimeout(() => {errorCallback("Navigator not available. MB Tor used.");}, 0.7);
+}
+
+
+function getGeoIP() {
+  var getJSON = function (url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
-    xhr.onload = function() {
+    xhr.onload = function () {
       var status = xhr.status;
       if (status === 200) {
         callback(null, xhr.response);
@@ -29,13 +44,23 @@ var getJSON = function(url, callback) {
       }
     };
     xhr.send();
-};
+  };
 
-getJSON('http://ipwho.is/',
-function(err, data) {
-  if (err !== null) {
-    alert('Something went wrong: ' + err);
-  } else {
-    alert('Your city: ' + data["city"]);
-  }
-});*/
+  getJSON('http://ipwho.is/',
+      function (err, data) {
+        if (err !== null) {
+          alert('GeoIP: Something went wrong: ' + err + "\nContact administrator: Yaroslav-k-12-31@yandex.com");
+        } else {
+          // alert('Your city: ' + data["city"]);
+          console.log(data)
+          location_input.value = data["city"]
+          setTimeout(
+            () => {
+              getForecastFunction(data["city"], data["latitude"], data["longitude"]);
+            }, 0.1
+          )
+
+        }
+      });
+
+}
