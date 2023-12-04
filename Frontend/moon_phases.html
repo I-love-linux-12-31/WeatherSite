@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moon phases for month</title>
+    <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
+
+    <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
+    <link rel="stylesheet" href="/css/dark-theme/style.css" class="dark-theme-importer">
+
+    <link rel="stylesheet" href="/css/style.css" class="dark-theme-importer"> <!-- -->
+
+    <link rel="stylesheet" href="/css/burger-menu.css">
+    <!--  -->
+
+    <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
+    <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
+    <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
+    <link rel="stylesheet" href="/css/moon_phases.css"> <!-- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/themes.js"></script>
+
+    <script type="text/javascript" src="/js/moon_phases.js"></script>
+</head>
+<body>
+
+</script>
+
+<header class="navbar"> <!-- Панель навигации -->
+
+    <img rel="svg+xml" src="/favicon.svg" alt="*Logo*" height="64px">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-btn" for="menu-toggle">
+        <span></span>
+        <img rel="svg+xml" src="/menu_icon.svg" alt="*Menu*" height="64px">
+    </label>
+
+
+    <script type="text/javascript">
+		document.getElementById("menu-toggle").addEventListener('change', () => {
+		  console.log("Menu - button pressed");
+		})
+    </script>
+
+    <nav id="nav-header-left">
+        <ul class="nav_items">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">To home page</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/monthly/">monthly</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/tasks/main.html">Tasks page</a>
+            </li>
+        </ul>
+    </nav>
+        <div class="navbar-right">
+            <!--<p class="nav-item-r">
+                    <a class="nav-link active" aria-current="page" href="/">___</a>
+            </p>-->
+            <p class="nav-item-r">
+                <label for="users-city-input" class="nav-link">
+                    <input class="nav-link-input" type="text" id="users-city-input" name="users-city" placeholder="Your location">
+                    <script type="text/javascript">
+                        let location_input = document.getElementById("users-city-input");
+/*                        location_input.setAttribute("value", "#####");
+                        location_input.value = 'Hello, world!';*/
+                    </script>
+                </label>
+            </p>
+
+
+            <label class="language-switch"> <!-- Theme switch -->
+                <input type="checkbox" id="theme-select-checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🌒</p>
+                <p class="language-switch-on">🌞</p>
+                <script type="text/javascript">
+
+		document.getElementById("theme-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+          change_theme();
+		})
+                </script>
+            </label>
+
+
+            <!--<label class="language-switch">
+                <input type="checkbox" id="lang-select-checkbox">
+                <span class="language-switch-slider"></span>
+                <p class="language-switch-off">🇺🇸</p>
+                <p class="language-switch-on">🇷🇺</p>
+                <script type="text/javascript">
+
+		document.getElementById("lang-select-checkbox").addEventListener('change', () => {
+		  console.log("Состояние чекбокса изменнено");
+		})
+                </script>
+            </label>-->
+
+        </div>
+
+</header>
+<br>
+
+    <div class="loader-host" id="loader-host">
+        <div class="weather-card-big weather-card-big-week" style="display: flex;align-items: center; justify-items: center" id="loader-indicator">
+            <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
+            <p>Searching forecast fore you...</p>
+            <br style="margin-right: 16px;">
+            <div class="loader-indicator"></div>
+        </div>
+        <script type="text/javascript">
+            var loader_indicator = document.getElementById("loader-indicator");
+        </script>
+    </div>
+
+<main>
+
+    <div id="calendar-host">
+
+    </div>
+    <script type="text/javascript">
+        var calendar_host = document.getElementById("calendar-host");
+        let date_now = new Date();
+        // createCalendar(calendar_host, date_now.getFullYear(), date_now.getMonth());
+        loadMoonPhases(calendar_host, date_now.getFullYear(), date_now.getMonth());
+
+    </script>
+
+
+
+
+</main>
+
+</body>
+</html>

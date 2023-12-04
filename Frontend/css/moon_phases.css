@@ -1,0 +1,36 @@
+td {
+    font-family: "Open Sans", sans-serif;
+    color: azure;
+    font-size: 1.6em;
+    background-color: #02c4ff44;
+    padding-left: 8px;
+    border-radius: 8px;
+    min-width: 3em;
+    transition: background-color 0.3s ease-in-out, font-size 0.4s ease-in-out;
+}
+
+td:hover {
+    background-color: #02c4ff77;
+    font-size: 1.8em;
+}
+
+th {
+    font-family: "Open Sans", sans-serif;
+    color: azure;
+    font-size: 1.8em;
+}
+
+table {
+    background-color: #32555b;
+    border-radius: 1em;
+    margin-top: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+}
+
+#calendar-host {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

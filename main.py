@@ -20,6 +20,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(
 
 @app.route('/')
 @app.route('/index')
+@app.route('/index.html')
 def index():
     return flask.send_file("Frontend/index.html")
 
@@ -104,10 +105,10 @@ def page_not_found(error):
     return flask.send_file("Frontend/404.html"), 404
 
 
-@app.route("/12_days_forecast")
-@app.route("/12_days_forecast.html")
+@app.route("/10_days_forecast")
+@app.route("/10_days_forecast.html")
 def forecast_on_12_days():
-    return flask.send_file("Frontend/12_days_forecast.html")
+    return flask.send_file("Frontend/10_days_forecast.html")
 
 
 @app.route("/js/12_days_forecast.js")
@@ -123,6 +124,22 @@ def global_backend_config_js():
 @app.route("/js/main_page_forecasts.js")
 def main_page_forecasts_js():
     return flask.send_file("Frontend/js/main_page_forecasts.js")
+
+
+@app.route("/js/moon_phases.js")
+def moon_phases_js():
+    return flask.send_file("Frontend/js/moon_phases.js")
+
+
+@app.route("/moon_phases")
+@app.route("/moon_phases.html")
+def moon_phases_html():
+    return flask.send_file("Frontend/moon_phases.html")
+
+
+@app.route("/css/moon_phases.css")
+def moon_phases_css():
+    return flask.send_file("Frontend/css/moon_phases.css")
 
 
 if __name__ == '__main__':
