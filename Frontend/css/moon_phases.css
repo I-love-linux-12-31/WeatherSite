@@ -1,7 +1,33 @@
+/*@media only screen and (max-width: 1190px) {
+    !* Phones *!
+    td {
+        font-size: 1.6em;
+    }
+    td:hover {
+        font-size: 1.8em;
+    }
+    th {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width: 1191px) {*/
+    /* Desktop and big screen*/
+td {
+    font-size: 2em;
+}
+td:hover {
+    font-size: 2.4em;
+}
+th {
+    font-size: 2em;
+}
+/*}*/
+
 td {
     font-family: "Open Sans", sans-serif;
     color: azure;
-    font-size: 1.6em;
+
     background-color: #02c4ff44;
     padding-left: 8px;
     border-radius: 8px;
@@ -11,21 +37,20 @@ td {
 
 td:hover {
     background-color: #02c4ff77;
-    font-size: 1.8em;
+
 }
 
 th {
     font-family: "Open Sans", sans-serif;
     color: azure;
-    font-size: 1.8em;
+
 }
 
 table {
-    background-color: #32555b;
+    background-color: #32555b99;
     border-radius: 1em;
     margin-top: 8px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 24px;
 
 }
 

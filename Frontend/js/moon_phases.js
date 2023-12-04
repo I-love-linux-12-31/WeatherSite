@@ -33,17 +33,23 @@ function getMoonPhase(day, month, year){
 }
 
 function createCalendar(elem, year, month) {
+  month_title.innerHTML = getMonthName(month) + " " + year;
+
   let date = new Date(year, month - 1);
   let table = '<table><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>';
   while (date.getMonth() === month - 1) {
     table += '<tr>';
     for (let i = 0; i < 7; i++) {
       if (date.getDay() === i && date.getMonth() === month - 1) {
-        getMoonPhase(date.getDate(), month, year)
+        // getMoonPhase(date.getDate(), month, year)
+        let status = moonStatuses[date.getDate() + '.' + month + '.' + year];
+        if (status === undefined) {
+          status = "🌐";
+        }
         if (date.getDate() === date_now.getDate())
-          table += '<td style="color: #fc894d; font-weight: bold;">' + date.getDate() + " " + moonStatuses[date.getDate() + '.' + month + '.' + year] + '</td>';
+          table += '<td style="color: #fc894d; font-weight: bold;">' + date.getDate() + " " + status + '</td>';
         else
-          table += '<td>' + date.getDate() + " " + moonStatuses[date.getDate() + '.' + month + '.' + year] + '</td>';
+          table += '<td>' + date.getDate() + " " + status + '</td>';
 
 
 
@@ -55,7 +61,7 @@ function createCalendar(elem, year, month) {
     table += '</tr>';
   }
   table += '</table>';
-  elem.innerHTML = table;
+  elem.innerHTML += table;
 }
 
 
@@ -64,6 +70,7 @@ function loadMoonPhases(elem, year, month) {
   while (date.getMonth() === month - 1) {
     for (let i = 0; i < 7; i++) {
       if (date.getDay() === i && date.getMonth() === month - 1) {
+        // moonStatuses[date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear()] = "❌";
         getMoonPhase(date.getDate(), month, year)
         date.setDate(date.getDate() + 1);
       }
@@ -75,5 +82,5 @@ function loadMoonPhases(elem, year, month) {
      }
      catch (e){}
     createCalendar(elem, year, month);
-  }, 250)
+  }, 850)
 }

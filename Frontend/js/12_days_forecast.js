@@ -13,11 +13,6 @@ function getRandomColor() {
 }
 
 
-function getMonthName(monthNumber) {
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  return months[monthNumber];
-}
-
 
 function zeroPad(num, numZeros) {
     let n = Math.abs(num);
