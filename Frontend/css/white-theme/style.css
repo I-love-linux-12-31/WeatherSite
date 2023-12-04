@@ -31,3 +31,11 @@ h2 {
     font-size: 26px;
     font-family: "Open Sans", sans-serif;
 }
+
+#copyright-notification a{
+    color: #1d5f9d;
+}
+
+#copyright-notification {
+    color: #384f4f;
+}
