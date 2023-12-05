@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Moon phases for month</title>
+    <title>Weather forecast</title>
     <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
 
     <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
@@ -16,21 +16,18 @@
     <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
     <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
     <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
-    <link rel="stylesheet" href="/css/moon_phases.css"> <!-- -->
+    <link rel="stylesheet" href="/_tasks.css"> <!-- -->
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
 
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/themes.js"></script>
-
-    <script type="text/javascript" src="/js/moon_phases.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/themes.js"></script>
 </head>
 <body>
-
-</script>
 
 <header class="navbar"> <!-- Панель навигации -->
 
@@ -94,7 +91,7 @@
             </label>
 
 
-            <!--<label class="language-switch">
+<!--            <label class="language-switch">
                 <input type="checkbox" id="lang-select-checkbox">
                 <span class="language-switch-slider"></span>
                 <p class="language-switch-off">🇺🇸</p>
@@ -112,36 +109,25 @@
 </header>
 <br>
 
-    <div class="loader-host" id="loader-host">
-        <div class="weather-card-big weather-card-big-week" style="display: flex;align-items: center; justify-items: center" id="loader-indicator">
-            <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-            <p>Searching forecast fore you...</p>
-            <br style="margin-right: 16px;">
-            <div class="loader-indicator"></div>
-        </div>
-        <script type="text/javascript">
-            var loader_indicator = document.getElementById("loader-indicator");
-        </script>
-    </div>
-
 <main>
-    <h2 id="month-title"></h2>
-    <div id="calendar-host">
+<!--<article>Main content</article>-->
+<section >
+    <h1>About project</h1>
+    <h2>About me</h2>
+    <p>Author: Yaroslav Kuznetsov <a href="mailto://Yaroslav-k-12-31@yandex.com">Yaroslav-k-12-31@yandex.com</a></p>
+    <p>This site was created as my coursework at "Developing of client part of internet resource" subject</p>
 
-    </div>
-    <script type="text/javascript">
-        var month_title = document.getElementById("month-title");
-        var calendar_host = document.getElementById("calendar-host");
-        let date_now = new Date();
-        // createCalendar(calendar_host, date_now.getFullYear(), date_now.getMonth());
-        loadMoonPhases(calendar_host, date_now.getFullYear(), date_now.getMonth());
+    <h2>Forecast data</h2>
+    <p>Forecast based on data from <a href="https://met.no">Norwegian Meteorological Institute</a>.</p>
+    <p>API data are cached and proxied by my servers yk-hosted-12-31.ydns.eu:9381</p>
 
-    </script>
+    <h2>Icons</h2>
+    <p>This site using <a href="https://github.com/daniruiz/flat-remix">Flat-remix icons</a> provided by GPLv3+ and CC-BY-SA licenses</p>
 
 
-
-
+</section>
 </main>
-<p id="copyright-notification">Created by Yaroslav Kuznetsov ©.</p>
+
+
 </body>
 </html>
