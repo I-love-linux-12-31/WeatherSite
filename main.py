@@ -152,5 +152,11 @@ def about_project_css():
     return flask.send_file("Frontend/css/about_project.css")
 
 
+
+@app.route("/503")
+def error_500_handler(error=None):
+    return flask.send_file("Frontend/503.html"), 503
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Moon phases for month</title>
+    <title>Weather forecast</title>
     <link rel="icon" href="/favicon.svg"> <!-- Фавиконка -->
 
     <link rel="stylesheet" href="/css/white-theme/style.css" class="white-theme-importer">
@@ -16,21 +16,18 @@
     <link rel="stylesheet" href="/css/weather-cards.css"> <!-- -->
     <link rel="stylesheet" href="/css/navbar-styles.css"> <!-- -->
     <link rel="stylesheet" href="/css/language-switch.css"> <!-- -->
-    <link rel="stylesheet" href="/css/moon_phases.css"> <!-- -->
+    <link rel="stylesheet" href="/_tasks.css"> <!-- -->
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
 
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/themes.js"></script>
-
-    <script type="text/javascript" src="/js/moon_phases.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/themes.js"></script>
 </head>
 <body>
-
-</script>
 
 <header class="navbar"> <!-- Панель навигации -->
 
@@ -97,7 +94,7 @@
             </label>
 
 
-            <!--<label class="language-switch">
+<!--            <label class="language-switch">
                 <input type="checkbox" id="lang-select-checkbox">
                 <span class="language-switch-slider"></span>
                 <p class="language-switch-off">🇺🇸</p>
@@ -115,36 +112,23 @@
 </header>
 <br>
 
-    <div class="loader-host" id="loader-host">
-        <div class="weather-card-big weather-card-big-week" style="display: flex;align-items: center; justify-items: center" id="loader-indicator">
-            <img class="weather-card-big-image" src="3rdParty/FreeIcons/weather-none-available.svg" alt="*Image*">
-            <p>Searching forecast fore you...</p>
-            <br style="margin-right: 16px;">
-            <div class="loader-indicator"></div>
-        </div>
-        <script type="text/javascript">
-            var loader_indicator = document.getElementById("loader-indicator");
-        </script>
-    </div>
-
 <main>
-    <h2 id="month-title"></h2>
-    <div id="calendar-host">
+<!--<article>Main content</article>-->
+<section >
 
+    <div class="" style="margin-left: 32px;">
+        <label class="text-404">
+          <h1 style="text-align: start">503</h1>
+          <h2 style="text-align: start">Forecast server not available! Try later</h2>
+          <h2>Or contact with administrator: <a href="mailto://Yarolsav-k-12-31@yandex.com" style="text-decoration: none; color: #429d80">Yarolsav-k-12-31@yandex.com</a></h2>
+        </label>
     </div>
-    <script type="text/javascript">
-        var month_title = document.getElementById("month-title");
-        var calendar_host = document.getElementById("calendar-host");
-        let date_now = new Date();
-        // createCalendar(calendar_host, date_now.getFullYear(), date_now.getMonth());
-        loadMoonPhases(calendar_host, date_now.getFullYear(), date_now.getMonth());
-
-    </script>
 
 
-
-
+</section>
 </main>
+
 <p id="copyright-notification">Created by Yaroslav Kuznetsov ©.</p>
+
 </body>
 </html>

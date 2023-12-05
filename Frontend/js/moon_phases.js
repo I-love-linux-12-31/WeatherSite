@@ -24,7 +24,10 @@ function getMoonPhase(day, month, year){
     }
     else {
       if (xhr.readyState === 4) {
-        alert("[" + xhr.status + "]\nSorry, but forecast server unavailable now.\nTry later on contact administrator: Yaroslav-k-12-31@yandex.com")
+        // alert("[" + xhr.status + "]\nSorry, but forecast server unavailable now.\nTry later on contact administrator: Yaroslav-k-12-31@yandex.com");
+        // window.location.href("/503");
+        window.location.replace("/503");
+
       } else {
 
       }

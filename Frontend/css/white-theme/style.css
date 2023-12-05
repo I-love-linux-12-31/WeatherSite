@@ -39,3 +39,14 @@ h2 {
 #copyright-notification {
     color: #384f4f;
 }
+
+h1 {
+    color: #4c5050;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#about-page-text-block p {
+    color: #2f3636;
+}

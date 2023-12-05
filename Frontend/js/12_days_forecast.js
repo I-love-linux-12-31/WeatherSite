@@ -64,12 +64,12 @@ function get_12_days_forecast(location, lat, lon) {
             loader_indicator.parentNode.removeChild(loader_indicator);
         }
         catch (e){}
-      // alert("OK")
 
     }
     else {
       if (xhr.readyState === 4) {
-        alert("[" + xhr.status + "]\nSorry, but forecast server unavailable now.\nTry later on contact administrator: Yaroslav-k-12-31@yandex.com")
+        alert("[" + xhr.status + "]\nSorry, but forecast server unavailable now.\nTry later on contact administrator: Yaroslav-k-12-31@yandex.com");
+        window.location.replace("/503");
       } else {
 
       }
@@ -79,11 +79,6 @@ function get_12_days_forecast(location, lat, lon) {
 
 
 function apply_12_days_forecast(){
-  // alert(today_forecast_met_no_12[0] + " \n" + POSIXtoUserTime(today_forecast_met_no_12[0]))
-  //   let host = document.createElement("div");
-  //   host.classList.add("forecast-12-days-cards-block")
-  //   forecast_12_days_met_no_cards_host.appendChild(host);
-
     // sort
     for (let j = 0; j < forecast_met_no_10.length; j++)
     {
@@ -153,7 +148,6 @@ function apply_12_days_forecast(){
     {
         if (last_date != null && (last_date.getDate() !== POSIXtoUserTime(forecast_met_no_10[i][0]).getDate()))
         {
-            // alert(last_date.getDate() + " != " + POSIXtoUserTime(other_days_forecast_met_no_12[i][0]).getDate())
             host = document.createElement("div");
             host.classList.add("forecast-12-days-cards-block")
             let title = document.createElement("h2");
@@ -191,7 +185,6 @@ function add_block_for_12_days_forecast(block_data, host){
     // 2 - temperature
     // 3 - wind
     if (met_no_10_loaded_timestamps.has(formatTime(POSIXtoUserTime(item[0])))) {
-        // alert("SIM");
         return;
     }
     met_no_10_loaded_timestamps.add(formatTime(POSIXtoUserTime(item[0])))

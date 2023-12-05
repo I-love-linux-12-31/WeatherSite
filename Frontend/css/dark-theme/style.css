@@ -45,3 +45,11 @@ h1 {
 #copyright-notification {
     color: #c7dcdc;
 }
+
+p {
+    color: azure;
+}
+
+#about-page-text-block p {
+    color: azure;
+}
