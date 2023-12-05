@@ -142,5 +142,15 @@ def moon_phases_css():
     return flask.send_file("Frontend/css/moon_phases.css")
 
 
+@app.route("/about_project")
+def about_project():
+    return flask.send_file("Frontend/about_project.html")
+
+
+@app.route("/css/about-project.css")
+def about_project_css():
+    return flask.send_file("Frontend/css/about_project.css")
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080, host="0.0.0.0")

@@ -31,6 +31,13 @@ h2 {
     font-family: "Open Sans", sans-serif;
 }
 
+h1 {
+    color: azure;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Open Sans", sans-serif;
+}
+
 #copyright-notification a{
     color: #3882c9;
 }

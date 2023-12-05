@@ -1,0 +1,9 @@
+p {
+    color: azure;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+p a {
+    color: #3882c9;
+    text-decoration: none;
+}
