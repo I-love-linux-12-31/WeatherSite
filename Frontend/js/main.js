@@ -19,14 +19,16 @@ const errorCallback = (error) => {
   getGeoIP();
 };
 
- // Disabled geolocation todo: make gui
-try {
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-}
-catch (e){
-  // navigator not available. MB Tor used.
-
-  setTimeout(() => {errorCallback("Navigator not available. MB Tor used.");}, 0.7);
+function initGeo()
+{
+  try {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  } catch (e) {
+    // navigator not available. MB Tor used.
+    setTimeout(() => {
+      errorCallback("Navigator not available. MB Tor used.");
+    }, 0.7);
+  }
 }
 
 

@@ -196,12 +196,32 @@
     bottom: -0.9em;
     left: 16px;
     font-family: "Open Sans", sans-serif;
-    font-size: 24px;
     z-index: 64;
 }
 
 #copyright-notification a{
     font-family: "Open Sans", sans-serif;
-    font-size: 24px;
     text-decoration: none;
+}
+
+@media only screen and (min-width: 1191px) {
+    /* Desktop and big screen*/
+    #copyright-notification {
+        font-size: 24px;
+    }
+    #copyright-notification a {
+        font-size: 24px;
+    }
+
+}
+@media only screen and (max-width: 1190px) {
+    /* Phones */
+
+    #copyright-notification {
+        font-size: 16px;
+    }
+    #copyright-notification a {
+        font-size: 16px;
+        font-size: 16px;
+    }
 }
