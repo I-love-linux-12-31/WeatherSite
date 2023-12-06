@@ -12,7 +12,7 @@ body {
     background-color: #32555b;
 }
 
-@media only screen and (max-width: 1190px) {
+@media only screen and (max-width: 1290px) {
     /* Phones */
 #nav-header-left {
     background-color: #b0dae3cf;

@@ -204,7 +204,7 @@
     text-decoration: none;
 }
 
-@media only screen and (min-width: 1191px) {
+@media only screen and (min-width: 1291px) {
     /* Desktop and big screen*/
     #copyright-notification {
         font-size: 24px;
@@ -214,7 +214,7 @@
     }
 
 }
-@media only screen and (max-width: 1190px) {
+@media only screen and (max-width: 1290px) {
     /* Phones */
 
     #copyright-notification {
