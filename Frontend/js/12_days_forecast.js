@@ -42,7 +42,7 @@ function formatTime(userTime){
 
 
 function get_12_days_forecast(location, lat, lon) {
-  const apiUrl = `http://yk-hosted-12-31.ydns.eu:9381/v2.0/met_no_10` + `?location=${encodeURIComponent(location)}&lat=${lat}&lon=${lon}`;
+  const apiUrl = 'http://' + HTTP_FORECAST_API_SERVER_HOST + '/v2.0/met_no_10' + `?location=${encodeURIComponent(location)}&lat=${lat}&lon=${lon}`;
 
   const xhr = new XMLHttpRequest();
 
